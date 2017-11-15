@@ -14,3 +14,18 @@
 .content-justify-center{
   text-align: center;
 }
+
+.fixed-form-width{
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shrink-text{
+  font-size: 70%;
+}
+
+.shrink-text a{
+  color: #ff1744;
+}
+
