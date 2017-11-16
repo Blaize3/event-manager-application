@@ -58,3 +58,16 @@ main{
   border: solid thin #fff;
   font-weight: normal; 
 }
+
+.objectAlign{
+  text-align: center;
+}
+
+.shrink-text{
+  font-size: 70%;
+}
+
+.object-margin{
+  margin-left: auto;
+  margin-right: auto;
+}
