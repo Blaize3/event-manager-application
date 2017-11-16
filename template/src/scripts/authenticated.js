@@ -33,14 +33,6 @@ function handleClickEvent(e){
       <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Event location">
           </div></div><div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Event venue">
           </div></div></div>
-    <div class="row content-table-body">&nbsp;&nbsp;&nbsp;Create Tickets</div>
-    <div class="row"><div class="col"><div class="form-check">
-              <label class="form-check-label shrink-text">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                  Free Ticket</label></div></div><div class="col"><div class="form-check"><label class="form-check-label shrink-text"><input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>Paid Ticket</label></div></div>
-      <div class="col"><div class="form-check"> <label class="form-check-label shrink-text">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                  Donation</label></div> </div> </div>
     <div class="row content-table-body">&nbsp;&nbsp;&nbsp;Privacy</div><div class="row">
       <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Enter public or private"></div></div><div class="col"> <div class="form-group">
                   <button type="submit" class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Event&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></div></div></div></div></form>`;
