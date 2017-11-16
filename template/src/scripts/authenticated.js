@@ -73,7 +73,15 @@ function handleClickEvent(e){
       <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Enter public or private"></div></div><div class="col"> <div class="form-group">
                   <button type="submit" class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Modify Event&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></div></div></div></div></form>`;
   }else if (menu === "Delete Event"){
+    headText.innerHTML = "Delete Event";
     contentArea.innerHTML = "";
+    contentArea.innerHTML = `<form class="object-margin"><div class="container objectAlign">
+    <!--  -->
+    <div class="row justify-content-center"><div class="col"><div class="form-group"><select class="custom-select d-block my-3" required>
+    <option value="">Select event to be deleted</option><option value="CS2014Reunion">CS2014Reunion</option><option value="Birthday">Birthday</option></select></div></div></div>
+    <!--  -->
+    <div class="col"> <div class="form-group">
+    <button type="submit" class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delete Event&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></div></div></div></div></form>`;
   }else if (menu === "My Profile"){
     contentArea.innerHTML = "";
   }else if (menu === "Sign Out"){
