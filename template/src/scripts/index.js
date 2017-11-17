@@ -1,0 +1,1 @@
+const scss = require('../scss/index.scss');
