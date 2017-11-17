@@ -15,4 +15,16 @@ Any Web browser will work fine
 7. **Delete event section** - This UI provides the interface for an authenticated user to delete an event he/she added.
 8. **Authenticated admin page** - This UI provides the interface for a signed in admin user to carry out some task.
 9.  **Add new center section** - This UI provides the interface for an authenticated admin user to add an a new event center.
-10. **Modify center details section** - This UI provides the interface for a authenticated admin user to modify eveent center details.
+10. **Modify center details section** - This UI provides the interface for a authenticated admin user to modify event center details.
+11. **View a Center's Log section** - This UI provides the interface for a user to view a center booking log i.e. slated event for a given center.
+
+# Built with
+1. HTML
+2. CSS
+3. Javascript
+
+#Authors
+  Ode Akugbe
+#License
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
