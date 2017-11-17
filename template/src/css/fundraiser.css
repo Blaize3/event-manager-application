@@ -1,0 +1,63 @@
+.fundraiser-image {
+  height: 600px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: url(../images/1.jpg) center center no-repeat;
+  /* background: #ddd; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  /* animation-name: SlideShow;
+  animation-duration: 5s;
+  animation-iteration-count: infinite; */
+}
+
+/* birthday-image {
+  background: url(../_images/ul1.jpg) no-repeat 0 0;
+  animation-name: ultimateSlider;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+} */
+
+@keyframes SlideShow {
+  0% {
+    background: url(../_images/1.jpg) center center no-repeat;
+  }
+  20% {
+    background: url(../_images/2.jpg) center center no-repeat;
+  }
+  40% {
+    background: url(../_images/3.jpg) center center no-repeat;
+  }
+  60% {
+    background: url(../_images/2.jpg) center center no-repeat;
+  }
+  80% {
+    background: url(../_images/1.jpg) center center no-repeat;
+  }
+  100% {
+    background: url(../_images/ul1.jpg) center center no-repeat;
+  }
+}
+
+.content-area{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-region{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  padding-bottom: 50px; 
+  font-size: 110%;
+}
+
+/* .change-font{
+  font-family: 'Old Standard TT', serif;
+} */
