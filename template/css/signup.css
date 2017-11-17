@@ -1,6 +1,14 @@
-body{
-  
-}
+/* body{
+  height: 600px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: url(../images/1.jpg) center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
 
 .sign-up-image {
   height: 150px;
