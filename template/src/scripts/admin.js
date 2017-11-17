@@ -30,58 +30,23 @@ function handleClickEvent(e){
     headText.innerHTML = "Add Center";
     contentArea.innerHTML = "";
     contentArea.innerHTML = `<form id="myForm" class="object-margin"><div class="container objectAlign">
-    <div class="row content-table-body">&nbsp;&nbsp;&nbsp;Event Details</div><div class="row">
+    <div class="row content-table-body">&nbsp;&nbsp;&nbsp;Event Center Details</div><div class="row">
     <div class="col"><div class="form-group">
-          <input class="form-control" type="text" placeholder="Event title">
+          <input class="form-control" type="text" placeholder="Center ID">
       </div></div><div class="col"><div class="form-group">
-          <input class="form-control" type="text" placeholder="Event organizer">
+          <input class="form-control" type="text" placeholder="Center Name">
       </div></div></div><div class="row"><div class="col">
-      <div class="form-group"><input class="form-control" type="date" placeholder="Event start date">
-      </div></div><div class="col"><div class="form-group"><input class="form-control" type="time" placeholder="Event time">
-      </div></div> <div class="col">
-      <div class="form-group"> <input class="form-control" type="date" placeholder="Event ending date">
+      <div class="form-group"><input class="form-control" type="text" placeholder="Center Location">
+      </div></div><div class="col">
+      <div class="form-group"> <input class="form-control" type="text" placeholder="Center Type">
       </div></div></div><div class="row">
-      <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Event location">
-          </div></div><div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Event venue">
-          </div></div></div>
-    <div class="row content-table-body">&nbsp;&nbsp;&nbsp;Privacy</div><div class="row">
-      <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Enter public or private"></div></div><div class="col"> <div class="form-group">
-                  <button type="submit" id="addEvent" onClick="addEventHandler()" class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Event&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></div></div></div></div></form>`;
+      <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Capacity">
+          </div></div><div class="col"><div class="form-group"><input class="form-control" type="date" placeholder="Create Date">
+          </div></div></div><div class="row">
+      <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Creator"></div></div><div class="col"> <div class="form-group">
+                  <button type="submit" id="addEvent" onClick="addEventHandler()" class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Center&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></div></div></div></div></form>`;
   }else if (menu === "Modify Centers Details"){
-    headText.innerHTML = "Modify Centers Details";
-    contentArea.innerHTML = "";
-    contentArea.innerHTML = `<form class="object-margin"><div class="container objectAlign">
-    <!--  -->
-    <div class="row justify-content-center"><div class="col"><div class="form-group"><select class="custom-select d-block my-3" required>
-    <option value="">Select event to be modified</option><option value="CS2014Reunion">CS2014Reunion</option><option value="Birthday">Birthday</option></select></div></div></div>
-    <!--  -->
-    <div class="row content-table-body">&nbsp;&nbsp;&nbsp;Event Details</div><div class="row">
-    <div class="col"><div class="form-group">
-          <input class="form-control" type="text" placeholder="Event title">
-      </div></div><div class="col"><div class="form-group">
-          <input class="form-control" type="text" placeholder="Event organizer">
-      </div></div></div><div class="row"><div class="col">
-      <div class="form-group"><input class="form-control" type="date" placeholder="Event start date">
-      </div></div><div class="col"><div class="form-group"><input class="form-control" type="time" placeholder="Event time">
-      </div></div> <div class="col">
-      <div class="form-group"> <input class="form-control" type="date" placeholder="Event ending date">
-      </div></div></div><div class="row">
-      <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Event location">
-          </div></div><div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Event venue">
-          </div></div></div>
-    <div class="row content-table-body">&nbsp;&nbsp;&nbsp;Privacy</div><div class="row">
-      <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Enter public or private"></div></div><div class="col"> <div class="form-group">
-                  <button type="submit" class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Modify Event&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></div></div></div></div></form>`;
-  }else if (menu === "Delete Event"){
-    headText.innerHTML = "Delete Event";
-    contentArea.innerHTML = "";
-    contentArea.innerHTML = `<form class="object-margin"><div class="container objectAlign">
-    <!--  -->
-    <div class="row justify-content-center"><div class="col"><div class="form-group"><select class="custom-select d-block my-3" required>
-    <option value="">Select event to be deleted</option><option value="CS2014Reunion">CS2014Reunion</option><option value="Birthday">Birthday</option></select></div></div></div>
-    <!--  -->
-    <div class="col"> <div class="form-group">
-    <button type="submit" class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delete Event&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></div></div></div></div></form>`;
+    
   }else if (menu === "My Profile"){
     contentArea.innerHTML = "";
   }else if (menu === "Sign Out"){
