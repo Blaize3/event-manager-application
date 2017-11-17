@@ -27,6 +27,13 @@ function handleClickEvent(e){
                                 <td>6:00 pm</td><td>3/12/2017</td><td>Mercy Oseni Halimat</td><td>Paid Ticket</td><td>Private</td>
                               </tr></table>`;
   }else if (menu === "Add Event"){
+
+    // <div class="input-group"><span class="input-group-addon" id="basic-addon1">@</span>
+    // <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    // </div>
+
+
+
     headText.innerHTML = "Add Event";
     contentArea.innerHTML = "";
     contentArea.innerHTML = `<form id="myForm" class="object-margin"><div class="container objectAlign">
@@ -35,13 +42,20 @@ function handleClickEvent(e){
           <input class="form-control" type="text" placeholder="Event title">
       </div></div><div class="col"><div class="form-group">
           <input class="form-control" type="text" placeholder="Event organizer">
-      </div></div></div><div class="row"><div class="col">
-      <div class="form-group"><input class="form-control" type="date" placeholder="Event start date">
-      </div></div><div class="col"><div class="form-group"><input class="form-control" type="time" placeholder="Event time">
-      </div></div> <div class="col">
-      <div class="form-group"> <input class="form-control" type="date" placeholder="Event ending date">
-      </div></div></div><div class="row">
-      <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Event location">
+      </div></div></div>
+      
+      <div class="row"><div class="col"><div class="form-group">
+      <div class="input-group"><span class="input-group-addon" id="basic-addon1">Date</span>
+      <input class="form-control" type="date" placeholder="Event start date">
+      </div></div></div><div class="col"><div class="form-group">
+      <div class="input-group"><span class="input-group-addon" id="basic-addon1">Time</span>
+      <input class="form-control" type="time" placeholder="Event time">
+      </div></div></div> <div class="col"><div class="form-group"> 
+      <div class="input-group"><span class="input-group-addon" id="basic-addon1">End Date</span>
+      <input class="form-control" type="date" placeholder="Event ending date">
+      </div></div></div></div>
+      
+      <div class="row"><div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Event location">
           </div></div><div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Event venue">
           </div></div></div>
     <div class="row content-table-body">&nbsp;&nbsp;&nbsp;Privacy</div><div class="row">
@@ -60,12 +74,30 @@ function handleClickEvent(e){
           <input class="form-control" type="text" placeholder="Event title">
       </div></div><div class="col"><div class="form-group">
           <input class="form-control" type="text" placeholder="Event organizer">
-      </div></div></div><div class="row"><div class="col">
+      </div></div></div>
+      
+      
+      
+      <div class="row"><div class="col"><div class="form-group">
+      <div class="input-group"><span class="input-group-addon" id="basic-addon1">Date</span>
+      <input class="form-control" type="date" placeholder="Event start date">
+      </div></div></div><div class="col"><div class="form-group">
+      <div class="input-group"><span class="input-group-addon" id="basic-addon1">Time</span>
+      <input class="form-control" type="time" placeholder="Event time">
+      </div></div></div> <div class="col"><div class="form-group"> 
+      <div class="input-group"><span class="input-group-addon" id="basic-addon1">End Date</span>
+      <input class="form-control" type="date" placeholder="Event ending date">
+      </div></div></div></div>
+
+      <!--<div class="row"><div class="col">
       <div class="form-group"><input class="form-control" type="date" placeholder="Event start date">
       </div></div><div class="col"><div class="form-group"><input class="form-control" type="time" placeholder="Event time">
       </div></div> <div class="col">
       <div class="form-group"> <input class="form-control" type="date" placeholder="Event ending date">
-      </div></div></div><div class="row">
+      </div></div></div>-->
+      
+      
+      <div class="row">
       <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Event location">
           </div></div><div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Event venue">
           </div></div></div>

@@ -41,7 +41,12 @@ function handleClickEvent(e){
       <div class="form-group"> <input class="form-control" type="text" placeholder="Center Type">
       </div></div></div><div class="row">
       <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Capacity">
-          </div></div><div class="col"><div class="form-group"><input class="form-control" type="date" placeholder="Create Date">
+          </div></div><div class="col"><div class="form-group">
+          
+          <div class="input-group"><span class="input-group-addon" id="basic-addon1">Date</span></span>
+          <input class="form-control" type="date" placeholder="Create Date">
+          </div>
+
           </div></div></div><div class="row">
       <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Creator"></div></div><div class="col"> <div class="form-group">
                   <button type="submit" id="addEvent" onClick="addEventHandler()" class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Center&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></div></div></div></div></form>`;
@@ -64,9 +69,16 @@ function handleClickEvent(e){
       <div class="form-group"> <input class="form-control" type="text" placeholder="Center Type">
       </div></div></div><div class="row">
       <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Capacity">
-          </div></div><div class="col"><div class="form-group"><input class="form-control" type="date" placeholder="Create Date">
+          </div></div><div class="col"><div class="form-group">
+          <input class="form-control" type="text" placeholder="Creator">
           </div></div></div><div class="row">
-      <div class="col"><div class="form-group"><input class="form-control" type="text" placeholder="Creator"></div></div><div class="col"> <div class="form-group">
+      <div class="col"><div class="form-group">
+
+      <div class="input-group"><span class="input-group-addon" id="basic-addon1">Date</span>
+      <input class="form-control" type="date" placeholder="Create Date">
+      </div>
+      
+      </div></div><div class="col"> <div class="form-group">
                   <button type="submit" class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Modify Center&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></div></div></div></div></form>`;
   }else if (menu === "View a Center's Log"){
     headText.innerHTML = "View a Center's Log";
