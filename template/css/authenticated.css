@@ -1,0 +1,38 @@
+.authenticated{
+  position: relative;
+  height: 530px;
+  top: 100px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.auth-type{
+  width: 100%;
+  text-align: center;
+}
+
+.centralize{
+  text-align: center;
+}
+
+.side-bar-menu ul li{
+  display: block;
+}
+
+.event-color{
+  border: solid thin #04031a;
+  color: #04031a;
+}
+
+#add-event{
+  position: absolute;
+  z-index: 1000000000;
+}
+
+.white-space2{
+  height: 50px;
+}
+
+
+
+

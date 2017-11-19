@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Cookie|Libre+Franklin|Lobster|Old+Standard+TT|Poiret+One|Satisfy" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arya|Text+Me+One" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/authenticated.css">
+  <title>Welcome to esKimo Events</title>
+</head>
+<body>
+  <header>
+    <div class="container-fluid">
+        <div class="navbar-wrapper1">
+            <nav class="navbar navbar-expand-lg navbar-light bg-define-color">
+                <a class="navbar-brand title-link" href="#">esKimo events</a>
+                <button class="navbar-toggler hamburger-button-color" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="nav">
+                        <li class="nav-item">
+                          <a class="nav-link active menu-item" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <!-- <a class="nav-link menu-item btn" role="button" data-toggle="modal" data-target="#exampleModalLong">Add Event</a> -->
+                          <a class="nav-link menu-item btn" role="button" data-toggle="modal" data-target="#add-event"> Add Center</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link menu-item btn" role="button" data-toggle="modal" data-target="#center-log">Center's Log</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-item" href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-item" href="#"><i class="fa fa-sign-out fa-2x" id="admin" aria-hidden="true"></i></a>
+                        </li>
+                      </ul>
+                </div>
+              </nav>
+        </div>
+    </div>
+  </header>
+
+  <main>
+   <div class="container-fluid authenticated">
+      <div class="row">
+        <div class="event-cat">Event Centers</div>
+      </div>
+     <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="card event-color mb-3 centralize" style="max-width: 20rem;">
+              <div class="card-header bg-transparent event-color font-weight-bold">La posh Garden</div>
+              <img class="card-img-top" src="images/garden.jpg" alt="Card image cap">
+              <div class="card-footer bg-transparent event-color"><div class="row">
+                <div class="col-sm"><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#detail-event">Details</button></div>
+                <div class="col-sm"><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#modify-event">Modify</button></div>
+              </div></div>
+            </div>
+       </div>
+       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="card event-color mb-3 centralize" style="max-width: 20rem;">
+              <div class="card-header bg-transparent event-color font-weight-bold">Conference Delux</div>
+              <img class="card-img-top" src="images/conference.jpg" alt="Card image cap">
+              <div class="card-footer bg-transparent event-color"><div class="row">
+                  <div class="col-sm"><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#detail-event">Details</button></div>
+                  <div class="col-sm"><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#modify-event">Modify</button></div>
+              </div></div>
+            </div>
+       </div>
+       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="card event-color mb-3 centralize" style="max-width: 20rem;">
+              <div class="card-header bg-transparent event-color font-weight-bold">De Dome</div>
+              <img class="card-img-top" src="images/dome.jpg" alt="Card image cap">
+              <div class="card-footer bg-transparent event-color"><div class="row">
+                  <div class="col-sm"><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#detail-event">Details</button></div>
+                  <div class="col-sm"><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#modify-event">Modify</button></div>
+              </div></div>
+            </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="white-space2"></div>
+  </main>
+
+  <footer class="bg-define-color footer-text">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-12 col-md-8">
+            <div class="container">
+              <div class="row">
+                <p class="footer-head-center">About</p>
+              </div>
+              <div class="row footer-head-content">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta error in sapiente odit sit praesentium! Sapiente magnam tempore porro, quis provident aperiam quas nulla mollitia nam, laborum dolorum quia eaque. 
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="row"><p class="footer-head-center">Connect</p></div>
+            <div class="row footer-head-content">
+              <div class="col"><span><a href="#"><i class="connect-icon fa fa-facebook-official fa-2x" aria-hidden="true"></i></a></span></div>
+              <div class="col"><span><a href="#"><i class="connect-icon fa fa-instagram fa-2x" aria-hidden="true"></i></a></span></div>
+              <div class="col"><span><a href="#"><i class="connect-icon fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></span></div>
+            </div>
+          </div>
+      </div>
+      <div class="row copyright">
+            esKimo events &copy;2017.
+      </div>
+    </div>
+  </footer>
+  <!-- Add Center -->
+  <div class="modal fade" id="add-event" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title make-text-bold" id="exampleModalLongTitle">Add Center</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                <div class="container">
+                <!-- 00000 -->
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter center name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter center address">
+                        </div>
+                    </div>
+                </div>
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                                <select class="form-control">
+                                    <option>Select Center Type</option>
+                                </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter center capacity" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                        </div>
+                    </div>
+                </div>
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Usage fee" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                        </div>
+                    </div>
+                </div>
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Added By" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                        </div>
+                    </div>
+                </div>
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Center Description"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- 00000 -->
+              </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-success">Add Center</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Add Event -->
+
+    <!-- Modify Event -->
+    <div class="modal fade" id="modify-event" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title make-text-bold" id="exampleModalLongTitle">Modify Center</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div class="container">
+                  <!-- 00000 -->
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                                <select class="form-control">
+                                    <option>Select Center ID</option>
+                                </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                        <div class="col">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter center name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row content-justify-center">
+                        <div class="col">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter center address">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row content-justify-center">
+                        <div class="col">
+                            <div class="form-group">
+                                    <select class="form-control">
+                                        <option>Select Center Type</option>
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row content-justify-center">
+                        <div class="col">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter center capacity" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row content-justify-center">
+                        <div class="col">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Usage fee" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row content-justify-center">
+                        <div class="col">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Added By" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row content-justify-center">
+                        <div class="col">
+                            <div class="form-group">
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Center Description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                  <!-- 00000 -->
+                </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-outline-success">Modify Center</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Modify Center  -->
+
+    <!-- Details of an Center -->
+    <div class="modal fade" id="detail-event" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title make-text-bold" id="exampleModalLongTitle">Center Details</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div class="container">
+                  <!-- 00000 -->
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Center ID</span>
+                                  <label class="form-control">001</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Center Name</span>
+                                  <label class="form-control">La posh Garden</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Center Address</span>
+                                  <label class="form-control">112 VGC, Lagos, Nigeria</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Center Type</span>
+                                  <label class="form-control">Garden</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                        <div class="col">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="btnGroupAddon">Capacity</span>
+                                    <label class="form-control">5,000</label>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Usage Fee</span>
+                                  <label class="form-control"># 50,000.00 Per Hour</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Added By</span>
+                                  <label class="form-control">Ode Akugbe</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                                <label for="exampleInputEmail1">Center Description</label>
+                                <label class="form-control">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta error in sapiente odit sit praesentium! Sapiente magnam tempore porro, quis provident aperiam quas nulla mollitia nam, laborum dolorum quia eaque. 
+                                </label>
+                              </div>
+                      </div>
+                  </div>
+                  <!-- 00000 -->
+                </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Details of an Center -->
+
+    <!-- View Center Log-->
+    <div class="modal fade" id="center-log" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title make-text-bold" id="exampleModalLongTitle">Center Activity Log</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                      <div class="container">
+                      <!-- 00000 -->
+                      <div class="row content-justify-center">
+                          <div class="col">
+                              <div class="form-group">
+                                    <select class="form-control">
+                                        <option>Select Center ID</option>
+                                    </select>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- 00000 -->
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                        <!-- 00000 -->
+                        <div class="row content-justify-center">
+                            <div class="col">
+                                <br>
+                                <div class="center-summary text-head-small make-text-bold">Center Activities Log</div>
+                            </div>
+                        </div>
+                        <div class="row content-justify-center">
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="btnGroupAddon">Center Name</span>
+                                        <label class="form-control">La posh Garden</label>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row content-justify-center">
+                            <div class="col">
+                                <div class="form-group">
+                                    <!-- llllllllllllllllllllll -->
+                                    <table class="table">
+                                            <thead>
+                                              <tr class="">
+                                                <th>#</th>
+                                                <th>Event Title</th>
+                                                <th>Event Organizer</th>
+                                                <th>Date</th>
+                                                <th>Time</th>
+                                                <th>End Date</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <th scope="row">1</th>
+                                                <td>Philnewman's Wedding</td>
+                                                <td>esKimo Events</td>
+                                                <td>31/1/2018</td>
+                                                <td>03:00 pm</td>
+                                                <td>31/1/2018</td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                    <!-- llllllllllllllllllllll -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 00000 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- End View Center Log -->
+
+  <script src="https://use.fontawesome.com/bcb6ad3812.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
