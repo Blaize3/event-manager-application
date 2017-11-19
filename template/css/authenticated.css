@@ -1,73 +1,38 @@
-body{
-  margin: 0;
-  padding:0;
-}
-main{
+.authenticated{
   position: relative;
+  height: 530px;
+  top: 100px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
-.sidebar, .content{
-  color: #fff;
-  height: 72vh;
+
+.auth-type{
+  width: 100%;
+  text-align: center;
 }
-.sidebar{
-  width: 20%;
-  left:1.2%;
-  top:0;
-  position: absolute;
-}
-.content{
-  width: 79.7%;
-  margin-left: 20.3% ;
+
+.centralize{
+  text-align: center;
 }
 
 .side-bar-menu ul li{
   display: block;
 }
 
-.side-bar-menu ul li a{
-  text-align: center;
-  padding: 5px 0px 5px 20px;
-  color: #fff;
-  text-decoration: none;
+.event-color{
+  border: solid thin #04031a;
+  color: #04031a;
 }
 
-.side-bar-menu ul li a:hover{
-  color: #ff1744;
+#add-event{
+  position: absolute;
+  z-index: 1000000000;
 }
 
-.head-title{
-  font-family: cursive;
-  text-align: center;
-  padding-top: 20px;
-  font-weight: bolder;
+.white-space2{
+  height: 50px;
 }
 
-.content-table-body table{
-  width: 98%;
-  font-weight: normal;
-  font-size: 60%;
-  text-align: center;
-  margin: 0px 10px;
-}
 
-.content-table-body table tr{
-  border: solid thin #fff;
-}
 
-.content-table-body table tr th, .content-table-body table tr td{
-  border: solid thin #fff;
-  font-weight: normal; 
-}
 
-.objectAlign{
-  text-align: center;
-}
-
-.shrink-text{
-  font-size: 70%;
-}
-
-.object-margin{
-  margin-left: auto;
-  margin-right: auto;
-}

@@ -6,103 +6,563 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Cookie|Libre+Franklin|Lobster|Old+Standard+TT|Poiret+One|Satisfy" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arya|Text+Me+One" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/authenticated.css">
-  <link rel="shortcut icon" href="#">
-  <title>Document</title>
+  <title>Welcome to esKimo Events</title>
 </head>
 <body>
-    <header class="container-fluid">
-        <div class="sign-up-image header-menu">
-            <div class="top-container-holder">
-                <div class="table-header">
-                  <div class="row-header">
-                    <div class="cell-header">
-                        <nav class="navbar navbar-expand-lg transparency">
-                            <div class="container ">
-                                <a class="navbar-brand main-logo menu-text-coloration" href="#">e<span class="ess">s</span>Kimo events</a>
-                                <button class="navbar-toggler hamburger-button" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                                                      <span class="navbar-toggler-icon hamburger-button"></span>
-                                                    </button>
-            
-                                <div class="collapse navbar-collapse search-padding" id="navbarTogglerDemo02">
-                                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 nav-menu-padding font-weight-bold">
-                                        <li class="nav-item active">
-                                            <a class="nav-link menu-text-coloration" href="index.html">Home <span class="sr-only">(current)</span></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link menu-text-coloration" href="#">About</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle menu-text-coloration" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Types of Events</a>
-                                            <div class="dropdown-menu dark-menu">
-                                                <a class="dropdown-item menu-text-coloration" href="birthdays.html">Birthdays</a>
-                                                <a class="dropdown-item menu-text-coloration" href="class.html">Class Reunions</a>
-                                                <a class="dropdown-item menu-text-coloration" href="fundraiser.html">Crowdfunding</a>
-                                                <a class="dropdown-item menu-text-coloration" href="family.html">Family Reunions</a>
-                                                <a class="dropdown-item menu-text-coloration" href="graduation.html">Graduations</a>
-                                                <a class="dropdown-item menu-text-coloration" href="wedding.html">Wedding</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                  </div>
+  <header>
+    <div class="container-fluid">
+        <div class="navbar-wrapper1">
+            <nav class="navbar navbar-expand-lg navbar-light bg-define-color">
+                <a class="navbar-brand title-link" href="#">esKimo events</a>
+                <button class="navbar-toggler hamburger-button-color" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="nav">
+                        <li class="nav-item">
+                          <a class="nav-link active menu-item" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <!-- <a class="nav-link menu-item btn" role="button" data-toggle="modal" data-target="#exampleModalLong">Add Event</a> -->
+                          <a class="nav-link menu-item btn" role="button" data-toggle="modal" data-target="#add-event"> Add Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-item btn" role="button" data-toggle="modal" data-target="#center-log">Center's Log</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-item"  href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-item btn" href="#"><i class="fa fa-sign-out fa-2x" id="user" aria-hidden="true"></i></a>
+                        </li>
+                      </ul>
                 </div>
-            </div>  
+              </nav>
         </div>
-    </header>
-    <br><br><br><br><br>
-    <main>
-       <div class=container-fluid>
-          <div class="sidebar buttom-container"> 
-                    <p class="head-title">Dashboard</p>
-            <hr>
-            <div class="row side-bar-menu">
-              <div class="row">
-                <ul>
-                  <li class="menuItem"><a href="#">My Events</a></li>
-                  <li class="menuItem"><a href="#">Add Event</a></li>
-                  <li class="menuItem"><a href="#">Modify Event</a></li>
-                  <li class="menuItem"><a href="#">Delete Event</a></li>
-                  <li class="menuItem"><a href="#">View a Center's Log</a></li>
-                  <hr>
-                  <li class="menuItem"><a href="#">My Profile</a></li>
-                  <li class="menuItem"><a href="#">Sign Out</a></li>
-                </ul>
+    </div>
+  </header>
+
+  <main>
+   <div class="container-fluid authenticated">
+      <div class="row">
+        <div class="event-cat">My Events</div>
+      </div>
+     <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="card event-color mb-3 centralize" style="max-width: 20rem;">
+              <div class="card-header bg-transparent event-color font-weight-bold">Event Title</div>
+              <div class="card-body event-color">
+                  <i class="fa fa-calendar fa-5x" aria-hidden="true"></i>
               </div>
-             </div>
+              <div class="card-footer bg-transparent event-color"><div class="row">
+                <div class="col-sm"><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#delete-event">Delete</button></div>
+                <div class="col-sm"><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#detail-event">Details</button></div>
+                <div class="col-sm"><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#modify-event">Modify</button></div>
+              </div></div>
+            </div>
+       </div>
+       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="card event-color mb-3 centralize" style="max-width: 20rem;">
+              <div class="card-header bg-transparent event-color font-weight-bold">Event Title</div>
+              <div class="card-body event-color">
+                  <i class="fa fa-calendar fa-5x" aria-hidden="true"></i>
+              </div>
+              <div class="card-footer bg-transparent event-color"><div class="row">
+                  <div class="col-sm"><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#delete-event">Delete</button></div>
+                  <div class="col-sm"><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#detail-event">Details</button></div>
+                  <div class="col-sm"><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#modify-event">Modify</button></div>
+              </div></div>
+            </div>
+       </div>
+       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="card event-color mb-3 centralize" style="max-width: 20rem;">
+              <div class="card-header bg-transparent event-color font-weight-bold">Event Title</div>
+              <div class="card-body event-color">
+                  <i class="fa fa-calendar fa-5x" aria-hidden="true"></i>
+              </div>
+              <div class="card-footer bg-transparent event-color"><div class="row">
+                  <div class="col-sm"><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#delete-event">Delete</button></div>
+                  <div class="col-sm"><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#detail-event">Details</button></div>
+                  <div class="col-sm"><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#modify-event">Modify</button></div>
+              </div></div>
+            </div>
+       </div>
+     </div>
+   </div>
+  </main>
+
+  <footer class="bg-define-color footer-text">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-12 col-md-8">
+            <div class="container">
+              <div class="row">
+                <p class="footer-head-center">About</p>
+              </div>
+              <div class="row footer-head-content">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta error in sapiente odit sit praesentium! Sapiente magnam tempore porro, quis provident aperiam quas nulla mollitia nam, laborum dolorum quia eaque. 
+              </div>
+            </div>
           </div>
-          
-          <div class="content buttom-container">
-                <p class="head-title head-text">Select an menu item</p>
-                <hr>
+          <div class="col-12 col-md-4">
+            <div class="row"><p class="footer-head-center">Connect</p></div>
+            <div class="row footer-head-content">
+              <div class="col"><span><a href="#"><i class="connect-icon fa fa-facebook-official fa-2x" aria-hidden="true"></i></a></span></div>
+              <div class="col"><span><a href="#"><i class="connect-icon fa fa-instagram fa-2x" aria-hidden="true"></i></a></span></div>
+              <div class="col"><span><a href="#"><i class="connect-icon fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></span></div>
+            </div>
+          </div>
+      </div>
+      <div class="row copyright">
+            esKimo events &copy;2017.
+      </div>
+    </div>
+  </footer>
+  <!-- Add Event -->
+  <div class="modal fade" id="add-event" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title make-text-bold" id="exampleModalLongTitle">Add Event</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="row">
                 <div class="container">
-                  <div class="row content-table-body">
-                    
+                <!-- 00000 -->
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter event title">
+                        </div>
                     </div>
                 </div>
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter event organizer">
+                        </div>
+                    </div>
+                </div>
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter event location">
+                        </div>
+                    </div>
+                </div>
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter event center" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                        </div>
+                    </div>
+                </div>
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="btnGroupAddon">Date</span>
+                                <input type="date" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="btnGroupAddon">Time</span>
+                                <input type="time" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="btnGroupAddon">End Date</span>
+                                <input type="date" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option>Select Privacy Option</option>
+                              </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row content-justify-center">
+                    <div class="col">
+                        <div class="form-group">
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Event Description"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- 00000 -->
+              </div>
+              </div>
           </div>
-       </div>
-    </main>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-success">Add Event</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Add Event -->
 
-    <footer>
-        <div class="row">
-            <div class="footer-container">
-                <div class="container text-light">
-                    esKimo Events &copy;2017, Andela 21 Project.
+    <!-- Modify Event -->
+    <div class="modal fade" id="modify-event" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title make-text-bold" id="exampleModalLongTitle">Modify Event</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div class="container">
+                  <!-- 00000 -->
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                                <select class="form-control">
+                                    <option>Select Event ID</option>
+                                </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter event title">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter event organizer">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter event location">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter event center" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Date</span>
+                                  <input type="date" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                </div>
+                          </div>
+                      </div>
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Time</span>
+                                  <input type="time" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                </div>
+                          </div>
+                      </div>
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">End Date</span>
+                                  <input type="date" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <select class="form-control">
+                                  <option>Select Privacy Option</option>
+                                </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Event Description"></textarea>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- 00000 -->
+                </div>
                 </div>
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-outline-success">Modify Event</button>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    <!-- End Modify Event  -->
+
+    <!-- Delete Event -->
+
+    <div class="modal fade" id="delete-event" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title make-text-bold" id="exampleModalLabel">Delete an Event</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Do you want to delete Event?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary">Don't Delete Event</button>
+              <button type="button" class="btn btn-outline-success">Delete Event</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- End Delete Event -->
+
+    <!-- Details of an Event -->
+    <div class="modal fade" id="detail-event" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title make-text-bold" id="exampleModalLongTitle">Event Details</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div class="container">
+                  <!-- 00000 -->
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Event ID</span>
+                                  <label class="form-control">001</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Event Title</span>
+                                  <label class="form-control">Philnewman's Wedding</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Event Organizer</span>
+                                  <label class="form-control">esKimo Events</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Event Location</span>
+                                  <label class="form-control">Lagos State, Nigeria.</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Event Center</span>
+                                  <label class="form-control">La posh Garden, 112 VGC, Lagos.</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Event Date</span>
+                                  <label class="form-control">31/1/2018.</label>
+                                </div>
+                          </div>
+                      </div>
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Event Time</span>
+                                  <label class="form-control">03:00 pm</label>
+                                </div>
+                          </div>
+                      </div>
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Event End Date</span>
+                                  <label class="form-control">31/1/2018.</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                      <div class="col">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="btnGroupAddon">Event Privacy</span>
+                                  <label class="form-control">Public</label>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row content-justify-center">
+                        <div class="col">
+                            <div class="form-group">
+                                  <label for="exampleInputEmail1">Event Description</label>
+                                  <label class="form-control">
+                                          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta error in sapiente odit sit praesentium! Sapiente magnam tempore porro, quis provident aperiam quas nulla mollitia nam, laborum dolorum quia eaque. 
+                                  </label>
+                                </div>
+                        </div>
+                    </div>
+                  <!-- 00000 -->
+                </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Details of an Event -->
+
+     <!-- View Center Log-->
+     <div class="modal fade" id="center-log" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title make-text-bold" id="exampleModalLongTitle">Center Activity Log</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                      <div class="container">
+                      <!-- 00000 -->
+                      <div class="row content-justify-center">
+                          <div class="col">
+                              <div class="form-group">
+                                    <select class="form-control">
+                                        <option>Select Center ID</option>
+                                    </select>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- 00000 -->
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                        <!-- 00000 -->
+                        <div class="row content-justify-center">
+                            <div class="col">
+                                <br>
+                                <div class="center-summary text-head-small make-text-bold">Center Activities Log</div>
+                            </div>
+                        </div>
+                        <div class="row content-justify-center">
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="btnGroupAddon">Center Name</span>
+                                        <label class="form-control">La posh Garden</label>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row content-justify-center">
+                            <div class="col">
+                                <div class="form-group">
+                                    <!-- llllllllllllllllllllll -->
+                                    <table class="table">
+                                            <thead>
+                                              <tr class="">
+                                                <th>#</th>
+                                                <th>Event Title</th>
+                                                <th>Event Organizer</th>
+                                                <th>Date</th>
+                                                <th>Time</th>
+                                                <th>End Date</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <th scope="row">1</th>
+                                                <td>Philnewman's Wedding</td>
+                                                <td>esKimo Events</td>
+                                                <td>31/1/2018</td>
+                                                <td>03:00 pm</td>
+                                                <td>31/1/2018</td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                    <!-- llllllllllllllllllllll -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 00000 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- End View Center Log -->
 
   <script src="https://use.fontawesome.com/bcb6ad3812.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <script src="../dist/scripts/index.js"></script>
-  <script src="scripts/authenticated.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>

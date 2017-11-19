@@ -1,6 +1,9 @@
-* {
-  font-family: 'Old Standard TT', serif;
-  font-size: 102.5%;
+html{
+  overflow-y: visible;
+}
+
+body, h1, h2, h3, h4, h5, h6, .body-text{
+  font-family: 'Text Me One', sans-serif;
 }
 
 body {
@@ -8,166 +11,149 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: rgba(54, 53, 53, 0.8);
+  font-size: 120%;
 }
+
+.navbar-wrapper1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100% !important;
+  left: 0;
+  z-index: 20;
+}
+
+.navbar-wrapper1, .bg-define-color{
+  background-color:  #04031a;
+}
+
 
 main {
   flex: 1 0 auto;
 }
 
-.header-menu {
+.header-image{
   position: relative;
+  width:100%;
+  height: 500px;
 }
 
-.header-image {
-  height: 600px;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background: url(../images/1.jpg) center center no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.modimage{
+  filter:blur(5px);
+  filter: brightness(50%);
 }
 
-.transparency {
+.absolute-text{
   position: absolute;
-  width: 100%;
-  top: 0px;
-  background-color: rgba(54, 53, 53, 1)
-}
-
-.top-container-holder {
-  position: absolute;
-  width: 100%;
-  top: 0px;
-}
-
-.bottom-container-holder {
-  position: absolute;
-  width: 100%;
-  bottom: 40px;
-}
-
-.buttom-container {
-  background-color: rgba(54, 53, 53, 0.6)
-}
-
-.dark-menu{
-  background-color: rgba(54, 53, 53, 1)
-}
-
-.main-logo {
-  font-size: 300%;
-  font-family: 'Lobster', cursive;
-}
-
-.table-header{
-  display: table;
-  width: 100%;
-}
-
-.row-header{
-  display: table-row;
-}
-
-.cell-head{
-  display: table-cell;
-}
-
-.nav-menu-padding {
-  margin-left: 200px;
-}
-
-.hamburger-button {
-  background-color: rgba(0, 0, 0, 0.0)
-}
-
-.menu-text-coloration {
-  color: #fff;
-}
-
-.menu-text-coloration:hover {
-  color: #ff1744;
-}
-
-a.menu-text-coloration .ess {
-  font-family: 'Lobster', cursive;
-  color: blue;
-}
-
-.footer-container {
-  width: 100%;
-  background-color: rgba(54, 53, 53, 0.5);
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.tbl-icon {
-  display: table;
+  top: 250px;
   margin-right: auto;
   margin-left: auto;
-}
-
-.row-icon {
-  display: table-row;
-}
-
-.cell-icon {
-  display: table-cell;
-  display: inline-flex;
-  padding: 0px 7px;
-}
-
-.jumbotron-edited {
-  padding: 2rem 1rem;
-  background-color: #e9ecef;
-  border-radius: 0.3rem;
-}
-
-.card-body-edited {
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  padding: 0.5rem;
-}
-
-.card {
-  margin: 4px;
-  background-color: #666;
-}
-
-.card:hover {
-  background-color: #f7617f;
-}
-
-img {
-  margin: auto;
-  max-width: 100%;
-}
-
-.summary {
-  margin-top: 10px;
   text-align: center;
 }
 
-.summary a:link,
-.summary a:visited {
-  font-family: cursive;
+.body-text{
+  color: #aaa;
+  font-size: 100%;
+}
+
+.menu-item, .title-link, .footer-text, .hamburger-button-color, .connect-icon, .welcome-text, .white-text{
+  color: #fff !important;
+}
+
+.welcome-text{
+  font-size: 300%;
+}
+
+.connect-icon:hover{
+  color: rgb(4, 36, 180) !important;
+}
+
+.event-cat{
+  width: 100%;
+  font-size: 300%;
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.copyright{
+  margin-left: 12.5%; 
+  padding: 20px 0px;
+  color: #aaa !important;
+
+}
+
+.title-link{
+  font-size: 250%;
+}
+
+.title-link, .footer-head-center, .copyright{
+  font-family: 'Text Me One', sans-serif;
+}
+
+.footer-head-content, .welcome-text, .event-cat{
+  font-family: 'Text Me One', sans-serif;
+}
+
+
+.menu-item:hover {
+  color: rgb(4, 36, 180) !important;
+}
+
+.footer-head-center{
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px 0px 0px;
+  font-size: 130%;
+}
+
+.footer-head-content{
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+.card-margin{
+  margin: 2%;
+}
+
+.card{
+  position: relative !important;
+  filter:blur(2px);
+  filter: brightness(90%);
+  margin-bottom: 3px;
+}
+
+.card:hover{
+  filter: brightness(70%);
+}
+
+.card-title{
+  position: absolute !important;
+  z-index: 1000;
+  font-family: 'Text Me One', sans-serif;
   font-weight: bolder;
-  color: #fff;
+  color: rgb(255, 255, 255)!important;
+  text-shadow: 0 2px #000;
 }
 
-.summary a:hover {
-  text-decoration: none;
-  color: #f7617f;
+.text-head-small{
+  width: 100%;
+  text-align: center;
 }
 
-.content-area{
-  margin: auto;
+.add-margin-top{
+  margin-top: 30px;
 }
 
-.para-text{
-  padding-left: 40px;
-  padding-right: 40px;
+.make-text-bold{
+  font-weight: bolder;
 }
+
+.margin-add{
+  margin-top: 10px;
+}
+
+.add-padding-text{
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
