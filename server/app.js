@@ -12,17 +12,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use((request, response, next) => {
-    const err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 app.use((err, request, response, next) => {
-    response.status(err.status || 500);
-    response.send({
-        message: err.message,
-        error: request.app.get('env') === 'development' ? err : {}
-    });
+  response.status(err.status || 500);
+  response.send({
+    message: err.message,
+    error: request.app.get('env') === 'development' ? err : {}
+  });
 });
 
 app.set('port', port);
