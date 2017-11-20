@@ -25,10 +25,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN
     }
   });
-  User.associate = (models) => {
-    User.hasMany(models.Event, {
-      foreignKey: 'userId'
-    });
-  };
+//   User.associate = (models) => {
+//     User.hasMany(models.Event, {
+//       foreignKey: 'userId'
+//     });
+//   };
   return User;
-};
+ };

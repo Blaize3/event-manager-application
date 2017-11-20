@@ -29,10 +29,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT
     }
   });
-  Center.associate = (models) => {
-    Center.hasMany(models.Event, {
-      foreignKey: 'centerId'
-    });
-  };
+//   Center.associate = (models) => {
+//     Center.hasMany(models.Event, {
+//       foreignKey: 'centerId'
+//     });
+//   };
   return Center;
 };
