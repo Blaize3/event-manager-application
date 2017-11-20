@@ -8,9 +8,17 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.STRING
     },
+    location: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
     center_type: {
       allowNull: false,
       type: DataTypes.STRING
+    },
+    isAvailable:{
+      allowNull: false,
+      type: DataTypes.BOOLEAN
     },
     capacity: {
       allowNull: false,
@@ -29,10 +37,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT
     }
   });
-//   Center.associate = (models) => {
-//     Center.hasMany(models.Event, {
-//       foreignKey: 'centerId'
-//     });
-//   };
+  Center.associate = (models) => {
+    Center.hasMany(models.Event, {
+      foreignKey: 'centerId'
+    });
+
+    Center.hasMany(models.Facilites, {
+      foreignKey: 'centerId'
+    });
+  };
   return Center;
 };

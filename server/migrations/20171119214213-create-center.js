@@ -14,9 +14,17 @@ module.exports = {
       allowNull: false,
       type: Sequelize.STRING
     },
+    location: {
+      allowNull: false,
+      type: Sequelize.STRING
+    },
     center_type: {
       allowNull: false,
       type: Sequelize.STRING
+    },
+    isAvailable:{
+      allowNull: false,
+      type: Sequelize.BOOLEAN
     },
     capacity: {
       allowNull: false,

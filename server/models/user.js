@@ -2,11 +2,21 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     email: {
       allowNull: false,
-      type: DataTypes.STRING
+      unique: true,
+      type: DataTypes.STRING,
+      validate: {
+        isEmail: {
+          args: true,
+          msg: 'email should follow this format you@example.com'
+        }
+      }
     },
     firstname: {
       allowNull: false,
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      validate: {
+        
+      }
     },
     lastname: {
       allowNull: false,
@@ -25,10 +35,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN
     }
   });
-//   User.associate = (models) => {
-//     User.hasMany(models.Event, {
-//       foreignKey: 'userId'
-//     });
-//   };
+  //   User.associate = (models) => {
+  //     User.hasMany(models.Event, {
+  //       foreignKey: 'userId'
+  //     });
+  //   };
   return User;
- };
+};
