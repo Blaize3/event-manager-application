@@ -37,14 +37,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT
     }
   });
-  Center.associate = (models) => {
-    Center.hasMany(models.Event, {
-      foreignKey: 'centerId'
-    });
+  // Center.associate = (models) => {
+  //   // Center.hasMany(models.Event, {
+  //   //   foreignKey: 'centerId'
+  //   // });
 
-    Center.hasMany(models.Facilites, {
-      foreignKey: 'centerId'
-    });
-  };
+  //   // Center.hasMany(models.Facilites, {
+  //   //   foreignKey: 'centerId'
+  //   // });
+  // };
   return Center;
 };

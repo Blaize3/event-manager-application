@@ -33,10 +33,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER
     }
   });
-  Facilites.associate = (models) => {
-    Facilites.belongsTo(models.Center, {
-      foreignKey: 'centerId'
-    });
-  };
+  // Facilites.associate = (models) => {
+  //   Facilites.belongsTo(models.Center, {
+  //     foreignKey: 'centerId'
+  //   });
+  // };
   return Facilites;
 };
