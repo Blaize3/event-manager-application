@@ -68,11 +68,11 @@ class HandleUserRequests {
         }
         if (isExisted) {
           if (isExisted.email === request.body.email && isExisted.username === request.body.username) {
-            return response.status(200).send({ error: 'email and username already exist' });
+            return response.status(400).send({ error: 'email and username already exist' });
           } else if (isExisted.email === request.body.email) {
-            return response.status(200).send({ error: 'email already exist' });
+            return response.status(400).send({ error: 'email already exist' });
           } else if (isExisted.username === request.body.username) {
-            return response.status(200).send({ error: 'username already exist' });
+            return response.status(400).send({ error: 'username already exist' });
           }
         }
       })

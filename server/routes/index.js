@@ -1,5 +1,5 @@
 import HandleUserRequests from '../controllers/usercontroller';
-//import HandleEventRequest from '../controllers/eventcontroller';
+import HandleEventRequest from '../controllers/eventcontroller';
 //import HandleCenterRequest from '../controllers/centercontroller';
 
 import checkUserAuthentication from '../controllers/middleware/isauthenticated';
@@ -12,7 +12,7 @@ export default (app) => {
 
   app.post('/api/v1/users/login', HandleUserRequests.signin);
 
-//   app.post('/api/v1/events', checkUserAuthentication.isAuthenticated, HandleEventRequest.createEvent);
+  app.post('/api/v1/events', checkUserAuthentication.isAuthenticated, HandleEventRequest.createEvent);
   
 //   app.put('/api/v1/events/:eventId', checkUserAuthentication.isAuthenticated, GetEvent.getOneEvent, HandleEventRequest.editEvent);
 
