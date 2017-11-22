@@ -7,8 +7,8 @@ module.exports = {
     username: 'blaize3',
     password: 'oghogho@1',
     isAdmin: true,
-    updatedAt: '2017-11-19T02:15:01.186Z',
-    createdAt: '2017-11-19T02:15:01.186Z'
+    updatedAt: '2017-11-21 01:21:40.219+00',
+    createdAt: '2017-11-21 01:21:40.219+00'
   }, {
     id: 2,
     email: 'egbeode@gmail.com',
@@ -17,8 +17,8 @@ module.exports = {
     username: 'preshode',
     password: 'precious@20',
     isAdmin: false,
-    updatedAt: '2017-11-19T02:15:01.186Z',
-    createdAt: '2017-11-19T02:15:01.186Z'
+    updatedAt: '2017-11-21 01:21:40.219+00',
+    createdAt: '2017-11-21 01:21:40.219+00'
   }], {}),
 
   down: (queryInterface, Sequelize) => queryInterface.bulkDelete('Users', null, {})

@@ -40,7 +40,7 @@ module.exports = {
     },
     description: {
       allowNull: true,
-      type: Sequelize.TEXT
+      type: Sequelize.STRING
     },
     createdAt: {
       allowNull: false,

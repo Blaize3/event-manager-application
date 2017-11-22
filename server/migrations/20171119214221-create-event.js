@@ -34,6 +34,18 @@ module.exports = {
       allowNull: false,
       type: Sequelize.STRING
     },
+    start_date: {
+      allowNull: false,
+      type: Sequelize.DATEONLY
+    },
+    event_time: {
+      allowNull: false,
+      type: Sequelize.STRING
+    },
+    end_date: {
+      allowNull: false,
+      type: Sequelize.DATEONLY
+    },
     privacy: {
       allowNull: false,
       type: Sequelize.STRING
