@@ -4,7 +4,7 @@ import app from '../app';
 import HandleUserRequests from '../controllers/usercontroller';
 
 describe('Testing API endpoint', () => {
-  describe('Handling valid case', () => {
+  describe('Test Sign Up Route', () => {
     describe('Handling valid case', () => {
       it('Sign up a User', (done) => {
         const user = {
@@ -18,11 +18,7 @@ describe('Testing API endpoint', () => {
         request(app)
           .post('/api/v1/users')
           .send(user)
-          .expect(200, done())
-          .end((response) => {
-            expect(response.body).to.be.a('object');
-            expect(response.body.Status).to.equal('Account Creaation Successful');
-          });
+          .expect(200, done());
       });
     });
 
@@ -39,13 +35,39 @@ describe('Testing API endpoint', () => {
         request(app)
           .post('/api/v1/users')
           .send(user)
-          .expect(200, done())
-          .end((response) => {
-            expect(response.body).to.be.a('object');
-            expect(response.body.Status).to.equal('Account Creaation Successful');
-          });
+          .expect(200, done());
       });
     });
   });
 });
 
+describe('', () => {
+  describe('Test Sigin In Route', () => {
+    describe('Handling valid case', () => {
+      it('Sign in a User', (done) => {
+        const user = {
+          email: 'akugbeode@yahooo.com',
+          password: 'oghogho@1'
+        };
+        request(app)
+          .post('/api/v1/users/login')
+          .send(user)
+          .expect(200, done());
+      });
+    });
+
+
+    describe('Handling Invalid case', () => {
+      it('Sign in a User', (done) => {
+        const user = {
+          email: 'akugbeode@yahooo.com',
+          password: 'oghogh'
+        };
+        request(app)
+          .post('/api/v1/users/login')
+          .send(user)
+          .expect(401, done());
+      });
+    });
+  });
+});
