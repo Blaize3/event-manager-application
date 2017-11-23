@@ -1,2 +1,4 @@
-service_name: "travis-ci"
-service_job_id: "305795732"
+# service_name: "travis-ci"
+# service_job_id: "305795732"
+
+repo_token: tuD7Hmgp8wnfJc3om2CusVX5TtxohRliu

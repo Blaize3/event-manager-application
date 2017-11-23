@@ -103,39 +103,39 @@ class HandleCenterRequest {
         next(error.errors[0].message);
       });
   }
-//   /**
-//  *
-//  *
-//  * @static
-//  * @param {any} request
-//  * @param {any} response
-//  * @param {any} next
-//  * @returns {HandleCenterRequest} The identifier for ...
-//  * @memberof HandleCenterRequest
-//  */
-//   static getACenter(request, response, next) {
-//     Center
-//       .findOne({
-//         where: {
-//           id: request.params.centerId
-//         }
-//       })
-//       .then((center) => {
-//         if (!center) {
-//           response.status(404).send({
-//             Status: 'Get Center failed',
-//             message: 'Center was not found.'
-//           });
-//         }
-//         response.status(200).send({
-//           Status: 'Get Center Successful',
-//           Center: center
-//         });
-//       })
-//       .catch((error) => {
-//         next(error.errors[0].message);
-//       });
-//   }
+  /**
+ *
+ *
+ * @static
+ * @param {any} request
+ * @param {any} response
+ * @param {any} next
+ * @returns {HandleCenterRequest} The identifier for ...
+ * @memberof HandleCenterRequest
+ */
+  static getACenter(request, response, next) {
+    Center
+      .findOne({
+        where: {
+          id: request.params.centerId
+        }
+      })
+      .then((center) => {
+        if (!center) {
+          response.status(404).send({
+            Status: 'Get Center failed',
+            message: 'Center was not found.'
+          });
+        }
+        response.status(200).send({
+          Status: 'Get Center Successful',
+          Center: center
+        });
+      })
+      .catch((error) => {
+        next(error.errors[0].message);
+      });
+  }
 //   /**
 //  *
 //  *
