@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'lastname required'
         },
         len: {
-          args: [3, 20],
+          args: [3, 255],
           msg: 'firstname length should be btw 3 - 20'
         }
       }
@@ -68,8 +68,8 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'username is required'
         },
         len: {
-          args: [8, 30],
-          msg: 'password length should be btw 3 - 30'
+          args: [3, 30],
+          msg: 'username length should be btw 3 - 30'
         }
       }
     },

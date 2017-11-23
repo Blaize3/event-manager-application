@@ -77,7 +77,7 @@ class HandleUserRequests {
         }
       })
       .catch((error) => {
-        next(error.errors[0].message);
+        next(new Error('Sequelize error'));
       });
   }
   /**
