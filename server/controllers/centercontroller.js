@@ -73,36 +73,36 @@ class HandleCenterRequest {
         next(error.errors[0].message);
       });
   }
-//   /**
-//  *
-//  *
-//  * @static
-//  * @param {any} request
-//  * @param {any} response
-//  * @param {any} next
-//  * @returns {HandleCenterRequest} The identifier for ...
-//  * @memberof HandleCenterRequest
-//  */
-//   static getAllCenters(request, response, next) {
-//     Center
-//       .findAll()
-//       .then((centers) => {
-//         if (centers.length <= 0) {
-//           return response.status(200).send({
-//             Status: 'Get Centers Successful',
-//             message: 'No Center found.'
-//           });
-//         }
-//         return response.status(200).send({
-//           Status: 'Get Centers Successful',
-//           'Number of Centers': ` ${centers.length} ${(centers.length === 1 ? 'center' : 'centers')}  were found.`,
-//           Centers: centers
-//         });
-//       })
-//       .catch((error) => {
-//         next(error.errors[0].message);
-//       });
-//   }
+  /**
+ *
+ *
+ * @static
+ * @param {any} request
+ * @param {any} response
+ * @param {any} next
+ * @returns {HandleCenterRequest} The identifier for ...
+ * @memberof HandleCenterRequest
+ */
+  static getAllCenters(request, response, next) {
+    Center
+      .findAll()
+      .then((centers) => {
+        if (centers.length <= 0) {
+          return response.status(200).send({
+            Status: 'Get Centers Successful',
+            message: 'No Center found.'
+          });
+        }
+        return response.status(200).send({
+          Status: 'Get Centers Successful',
+          'Number of Centers': ` ${centers.length} ${(centers.length === 1 ? 'center' : 'centers')}  were found.`,
+          Centers: centers
+        });
+      })
+      .catch((error) => {
+        next(error.errors[0].message);
+      });
+  }
 //   /**
 //  *
 //  *

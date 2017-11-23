@@ -20,7 +20,7 @@ export default (app) => {
 
   app.post('/api/v1/centers', checkUserAuthentication.isAuthenticated, HandleCenterRequest.addCenter);
 
-//   app.get('/api/v1/centers', checkUserAuthentication.isAuthenticated, HandleCenterRequest.getAllCenters);
+  app.get('/api/v1/centers', checkUserAuthentication.isAuthenticated, HandleCenterRequest.getAllCenters);
 
 //   app.get('/api/v1/centers/:centerId', checkUserAuthentication.isAuthenticated, HandleCenterRequest.getACenter);
 
