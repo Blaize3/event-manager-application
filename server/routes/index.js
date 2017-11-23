@@ -24,5 +24,5 @@ export default (app) => {
 
   app.get('/api/v1/centers/:centerId', checkUserAuthentication.isAuthenticated, HandleCenterRequest.getACenter);
 
-//   app.put('/api/v1/centers/:centerId', checkUserAuthentication.isAuthenticated, GetCenter.getOneEvent, HandleCenterRequest.getACenter);
+  app.put('/api/v1/centers/:centerId', checkUserAuthentication.isAuthenticated, GetCenter.getOneEvent, HandleCenterRequest.getACenter);
 };

@@ -1,7 +1,7 @@
 import api from 'supertest';
 import { expect } from 'chai';
 import app from '../app';
-import HandleUserRequests from '../controllers/usercontroller';
+// import HandleUserRequests from '../controllers/usercontroller';
 
 describe('API endpoint Test for Event Manager', () => {
   describe('Handle valid case', () => {
