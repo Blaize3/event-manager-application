@@ -112,35 +112,35 @@ class HandleEventRequest {
       });
     }
   }
-//   /**
-//  *
-//  *
-//  * @static
-//  * @param {any} request
-//  * @param {any} response
-//  * @param {any} next
-//  * @returns {HandleEventRequest} The identifier for ...
-//  * @memberof HandleEventRequest
-//  */
-//   static deleteEvent(request, response, next) {
-//      //  check if authenticated user is the owner of the event
-//      if (request.decoded.userID === request.eventObject.userId) {
-//       return request.eventObject
-//       .destroy({
-//         returning: true,
-//         plain: true
-//       })
-//       .then(deletedObject => response.status(200).send({
-//         Status: 'Delete Event Successful',
-//         'Deleted Event Details': request.eventObject.dataValues
-//       }));
-//      }else{
-//       return response.status(401).send({
-//         Status: 'Delete Event Failed',
-//         message: `User ${request.decoded.userID} is not authorized to delete this event`
-//       });
-//      }
-//   }
+  /**
+ *
+ *
+ * @static
+ * @param {any} request
+ * @param {any} response
+ * @param {any} next
+ * @returns {HandleEventRequest} The identifier for ...
+ * @memberof HandleEventRequest
+ */
+  static deleteEvent(request, response, next) {
+     //  check if authenticated user is the owner of the event
+     if (request.decoded.userID === request.eventObject.userId) {
+      return request.eventObject
+      .destroy({
+        returning: true,
+        plain: true
+      })
+      .then(deletedObject => response.status(200).send({
+        Status: 'Delete Event Successful',
+        'Deleted Event Details': request.eventObject.dataValues
+      }));
+     }else{
+      return response.status(401).send({
+        Status: 'Delete Event Failed',
+        message: `User ${request.decoded.userID} is not authorized to delete this event`
+      });
+     }
+  }
 }
 
 export default HandleEventRequest;

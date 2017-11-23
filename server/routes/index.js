@@ -16,7 +16,7 @@ export default (app) => {
   
   app.put('/api/v1/events/:eventId', checkUserAuthentication.isAuthenticated, GetEvent.getOneEvent, HandleEventRequest.editEvent);
 
-//   app.delete('/api/v1/events/:eventId', checkUserAuthentication.isAuthenticated, GetEvent.getOneEvent, HandleEventRequest.deleteEvent);
+  app.delete('/api/v1/events/:eventId', checkUserAuthentication.isAuthenticated, GetEvent.getOneEvent, HandleEventRequest.deleteEvent);
 
 //   app.post('/api/v1/centers', checkUserAuthentication.isAuthenticated, HandleCenterRequest.addCenter);
 
