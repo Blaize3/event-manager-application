@@ -136,69 +136,69 @@ class HandleCenterRequest {
         next(error.errors[0].message);
       });
   }
-//   /**
-//  *
-//  *
-//  * @static
-//  * @param {any} request
-//  * @param {any} response
-//  * @param {any} next
-//  * @returns {HandleCenterRequest} The identifier for ...
-//  * @memberof HandleCenterRequest
-//  */
-//   static modifyCenter(request, response, next) {
-//     const centerObject = {
-//       id: request.params.centerId,
-//       name: request.body.name,
-//       address: request.body.address,
-//       location: request.body.location,
-//       center_type: request.body.center_type,
-//       isAvailable: request.body.isAvailable,
-//       capacity: request.body.capacity,
-//       usage_fee: request.body.usage_fee,
-//       added_by: request.body.added_by,
-//       description: request.body.description
-//     };
+  /**
+ *
+ *
+ * @static
+ * @param {any} request
+ * @param {any} response
+ * @param {any} next
+ * @returns {HandleCenterRequest} The identifier for ...
+ * @memberof HandleCenterRequest
+ */
+  static modifyCenter(request, response, next) {
+    const centerObject = {
+      id: request.params.centerId,
+      name: request.body.name,
+      address: request.body.address,
+      location: request.body.location,
+      center_type: request.body.center_type,
+      isAvailable: request.body.isAvailable,
+      capacity: request.body.capacity,
+      usage_fee: request.body.usage_fee,
+      added_by: request.body.added_by,
+      description: request.body.description
+    };
 
-//     const validateEventCreateObject = CenterInputValidators.editObjectId(centerObject);
-//     if (validateEventCreateObject.isNotValid) {
-//       console.log(validateEventCreateObject.isNotValid);
-//       return response.status(400).send({
-//         message: `${validateEventCreateObject.errorCount} input fields data are not properly set`,
-//         data: validateEventCreateObject.errorMessage
-//       });
-//     }
+    const validateEventCreateObject = CenterInputValidators.editObjectId(centerObject);
+    if (validateEventCreateObject.isNotValid) {
+      console.log(validateEventCreateObject.isNotValid);
+      return response.status(400).send({
+        message: `${validateEventCreateObject.errorCount} input fields data are not properly set`,
+        data: validateEventCreateObject.errorMessage
+      });
+    }
 
-//     //  check if authenticated user is an admin User
-//     if (request.decoded.isAdmin) {
-//       const eventObj = {
-//         ...request.centerObject.dataValues,
-//         ...centerObject
-//       };
+    //  check if authenticated user is an admin User
+    if (request.decoded.isAdmin) {
+      const eventObj = {
+        ...request.centerObject.dataValues,
+        ...centerObject
+      };
 
-//       return Center
-//         .update(eventObj, {
-//           where: {
-//             id: request.params.centerId
-//           },
-//           returning: true,
-//           plain: true
-//         })
-//         .then(editedObject => response.status(200).send({
-//           Status: 'Edit Event Successful',
-//           'Edited Event Details': editedObject[1].dataValues
-//         }))
-//         .catch((error) => {
-//           next(error.errors[0].message);
-//         });
-//     }
-//     if (!request.decoded.isAdmin) {
-//       return response.status(401).send({
-//         Status: 'Edit Center Failed',
-//         message: `User ${request.decoded.userID} is not authorized to edit Center`
-//       });
-//     }
-//   }
+      return Center
+        .update(eventObj, {
+          where: {
+            id: request.params.centerId
+          },
+          returning: true,
+          plain: true
+        })
+        .then(editedObject => response.status(200).send({
+          Status: 'Edit Event Successful',
+          'Edited Event Details': editedObject[1].dataValues
+        }))
+        .catch((error) => {
+          next(error.errors[0].message);
+        });
+    }
+    if (!request.decoded.isAdmin) {
+      return response.status(401).send({
+        Status: 'Edit Center Failed',
+        message: `User ${request.decoded.userID} is not authorized to edit Center`
+      });
+    }
+  }
 }
 
 export default HandleCenterRequest;
