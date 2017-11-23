@@ -8,6 +8,7 @@ import UserInputValidators from './middleware/uservalidator';
  * @class HandleUserRequests
  */
 class HandleUserRequests {
+ 
   /**
      *
      *
@@ -24,13 +25,11 @@ class HandleUserRequests {
       password: request.body.password,
       firstname: request.body.firstname,
       lastname: request.body.lastname,
-      username: request.body.firstname,
-      isAdmin: request.body.isAdmin
+      username: request.body.username,
+      isAdmin: JSON.parse(request.body.isAdmin)
     };
-
     const validateAccountCreateObject = UserInputValidators.signupValidators(userObject);
     if (validateAccountCreateObject.isNotValid) {
-      console.log(validateAccountCreateObject.isNotValid);
       return response.status(400).send({
         message: `${validateAccountCreateObject.errorCount} input fields data are not properly set`,
         data: validateAccountCreateObject.errorMessage
@@ -39,14 +38,44 @@ class HandleUserRequests {
     console.log(validateAccountCreateObject.isNotValid);
     User.beforeCreate((userObject) => {
       userObject.password = securePassword.encryptPassword(userObject.password);
-      console.log(userObject.password);
     });
-    return User
-      .create(userObject)
-      .then(createdUser => response.status(200).send({
-        message: 'User Account has been created.',
-        data: createdUser
-      }))
+    User
+      .findOne({
+        where: {
+          $or: [
+            { email: userObject.email },
+            { username: userObject.username }
+          ]
+        }
+      })
+      .then((isExisted) => {
+        if (!isExisted) {
+          return User
+            .create(userObject)
+            .then(createdUser => response.status(200).send({
+              Status: 'Account Creaation Successful',
+              'Created Account': {
+                email: createdUser.email,
+                username: createdUser.username,
+                firstname: createdUser.firstname,
+                lastname: createdUser.lastname,
+                isAdmin: createdUser.isAdmin
+              }
+            }))
+            .catch((error) => {
+              next(error.errors[0].message);
+            });
+        }
+        if (isExisted) {
+          if (isExisted.email === request.body.email && isExisted.username === request.body.username) {
+            return response.status(200).send({ error: 'email and username already exist' });
+          } else if (isExisted.email === request.body.email) {
+            return response.status(200).send({ error: 'email already exist' });
+          } else if (isExisted.username === request.body.username) {
+            return response.status(200).send({ error: 'username already exist' });
+          }
+        }
+      })
       .catch((error) => {
         next(error.errors[0].message);
       });
@@ -71,6 +100,7 @@ class HandleUserRequests {
       .then((loggedInUser) => {
         if (!loggedInUser) {
           return response.status(401).send({
+            Status: 'Login failed',
             message: 'invalid email'
           });
         }
@@ -78,21 +108,29 @@ class HandleUserRequests {
         const isAuthenticationSuccessful = securePassword.decryptPassword(request.body.password, hash);
         if (isAuthenticationSuccessful) {
           const payLoad = {
-            userID: loggedInUser.id, email: loggedInUser.email, firstname: loggedInUser.firstname, lastname: loggedInUser.lastname
+            userID: loggedInUser.id, email: loggedInUser.email, firstname: loggedInUser.firstname, lastname: loggedInUser.lastname, isAdmin: loggedInUser.isAdmin
           };
           const token = Token.generateToken(payLoad);
           return response.status(200).send({
-            message: 'Access granted',
-            data: loggedInUser,
+            Status: 'Login Successful',
+            'Account Details': {
+              id: loggedInUser.id,
+              email: loggedInUser.email,
+              username: loggedInUser.username,
+              firstname: loggedInUser.firstname,
+              lastname: loggedInUser.lastname,
+              isAdmin: loggedInUser.isAdmin
+            },
             token
           });
         }
         return response.status(401).send({
+          Status: 'Login failed',
           message: 'invalid password'
         });
       })
       .catch((error) => {
-        next(new Error(error.name));
+        next(error.errors[0].message);
       });
   }
   /**
@@ -128,6 +166,7 @@ class HandleUserRequests {
       .then((user) => {
         if (!user) {
           return response.status(404).send({
+            Status: 'Password Reset failed',
             message: 'User account does not exist'
           });
         }
@@ -152,18 +191,22 @@ class HandleUserRequests {
             plain: true
           })
           .then(updatedUser => response.status(200).send({
-            message: 'Password has been updated',
-            data: updatedUser[1].dataValues
+            Status: 'Password Reset Successful',
+            'Account Details': {
+              id: updatedUser[1].dataValues.id,
+              email: updatedUser[1].dataValues.email,
+              username: updatedUser[1].dataValues.username,
+              firstname: updatedUser[1].dataValues.firstname,
+              lastname: updatedUser[1].dataValues.lastname,
+              isAdmin: updatedUser[1].dataValues.isAdmin
+            }
           }))
           .catch((error) => {
-            // return response.status(400).send({
-            //     m
-            // });
-            next(new Error(error.name));
+            next(error.errors[0].message);
           });
       })
       .catch((error) => {
-        next(new Error(error.name));
+        next(error.errors[0].message);
       });
   }
 }
