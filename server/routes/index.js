@@ -1,6 +1,6 @@
 import HandleUserRequests from '../controllers/usercontroller';
 import HandleEventRequest from '../controllers/eventcontroller';
-//import HandleCenterRequest from '../controllers/centercontroller';
+import HandleCenterRequest from '../controllers/centercontroller';
 
 import checkUserAuthentication from '../controllers/middleware/isauthenticated';
 import GetEvent from '../controllers/middleware/getEventMiddleware';
@@ -18,7 +18,7 @@ export default (app) => {
 
   app.delete('/api/v1/events/:eventId', checkUserAuthentication.isAuthenticated, GetEvent.getOneEvent, HandleEventRequest.deleteEvent);
 
-//   app.post('/api/v1/centers', checkUserAuthentication.isAuthenticated, HandleCenterRequest.addCenter);
+  app.post('/api/v1/centers', checkUserAuthentication.isAuthenticated, HandleCenterRequest.addCenter);
 
 //   app.get('/api/v1/centers', checkUserAuthentication.isAuthenticated, HandleCenterRequest.getAllCenters);
 
