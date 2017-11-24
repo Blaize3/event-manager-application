@@ -1,9 +1,9 @@
 language: node_js
 
 node_js: 
-   - "stable"
+  - "stable"
 install:
-   - npm install
+  - npm install
 services:
   - postgresql
 env:
@@ -13,7 +13,7 @@ env:
 before_script:
   - psql -c 'create database event_manager_test_db;' -U postgres 
 script:
-   - npm run test:dev
+  - npm run test:dev
 
 after_success:
   - npm run coverage

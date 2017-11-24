@@ -117,6 +117,26 @@ class UserInputValidators {
       errorMessage += ',\n';
     }
 
+    // Validate User role field
+    if (typeof (userObject.role) !== 'string') {
+      hasFailed = true;
+      errorCount += 1;
+      errorMessage += `${errorCount}. Role field must be a string, `;
+      errorMessage += ',\n';
+    } else if (userObject.role === '') {
+      hasFailed = true;
+      errorCount += 1;
+      errorMessage += `${errorCount}. Role field cannot be empty, `;
+    } else if (userObject.role === null) {
+      hasFailed = true;
+      errorCount += 1;
+      errorMessage += `${errorCount}. Role field cannot be null, `;
+    } else if (userObject.role === undefined) {
+      hasFailed = true;
+      errorCount += 1;
+      errorMessage += `${errorCount}. Role field was ommitted, `;
+    }
+
     isValidResult = {
       isNotValid: hasFailed,
       errorCount,

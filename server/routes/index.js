@@ -12,6 +12,8 @@ export default (app) => {
 
   app.post('/api/v1/users/login', HandleUserRequests.signin);
 
+  app.put('/api/v1/users/admin', checkUserAuthentication.isAuthenticated, HandleUserRequests.makeAdmin);
+
   app.post('/api/v1/events', checkUserAuthentication.isAuthenticated, HandleEventRequest.createEvent);
 
   app.put('/api/v1/events/:eventId', checkUserAuthentication.isAuthenticated, GetEvent.getOneEvent, HandleEventRequest.editEvent);

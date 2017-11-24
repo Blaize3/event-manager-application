@@ -98,7 +98,7 @@ class HandleEventRequest {
       })
       .then(editedObject => {
           return response.status(200).send({
-          Status: 'Edit Event Successful',
+          message: 'Edit Event Successful',
           'Edited Event Details': editedObject[1].dataValues
         });
       })

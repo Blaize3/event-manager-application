@@ -7,6 +7,7 @@ module.exports = {
     username: 'blaize3',
     password: 'oghogho@1',
     isAdmin: true,
+    role: 'super user',
     updatedAt: '2017-11-21 01:21:40.219+00',
     createdAt: '2017-11-21 01:21:40.219+00'
   }, {
@@ -17,6 +18,7 @@ module.exports = {
     username: 'preshode',
     password: 'precious@20',
     isAdmin: false,
+    role: 'super user',
     updatedAt: '2017-11-21 01:21:40.219+00',
     createdAt: '2017-11-21 01:21:40.219+00'
   }], {}),

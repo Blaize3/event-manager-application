@@ -21,13 +21,13 @@ class HandleUserRequests {
      */
   static signup(request, response, next) {
     const userObject = {
-      email: request.body.email,
+      email: (request.body.email).toLowerCase().trim(),
       password: bcrypt.hashSync(request.body.password, 10),
-      firstname: request.body.firstname,
-      lastname: request.body.lastname,
-      username: request.body.username,
+      firstname: (request.body.firstname).trim(),
+      lastname: (request.body.lastname).trim(),
+      username: (request.body.username).trim(),
       isAdmin: request.body.isAdmin,
-      role: request.body.role
+      role: (request.body.role).trim()
     };
 
     try {
@@ -69,7 +69,7 @@ class HandleUserRequests {
               const token = Token.generateToken(payLoad);
 
               response.status(201).send({
-                Status: 'Account Creaation Successful',
+                message: 'Account Creaation Successful',
                 'Created Account': {
                   id: createdUser.id,
                   email: createdUser.email,
@@ -132,14 +132,15 @@ class HandleUserRequests {
           };
           const token = Token.generateToken(payLoad);
           return response.status(200).send({
-            Status: 'Login Successful',
+            message: 'Login Successful',
             'Account Details': {
               id: loggedInUser.id,
               email: loggedInUser.email,
               username: loggedInUser.username,
               firstname: loggedInUser.firstname,
               lastname: loggedInUser.lastname,
-              isAdmin: loggedInUser.isAdmin
+              isAdmin: loggedInUser.isAdmin,
+              role: loggedInUser.role
             },
             token
           });
@@ -198,7 +199,7 @@ class HandleUserRequests {
               plain: true
             })
             .then(upgradedUser => response.status(200).send({
-              Status: `User ${upgradedUser.id} has been made an Admin`,
+              message: `User ${upgradedUser.id} has been made an Admin`,
               'User Details': {
                 id: upgradedUser.id,
                 email: upgradedUser.email,

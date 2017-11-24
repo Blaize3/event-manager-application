@@ -29,11 +29,12 @@ class GetCenter {
     return Center
       .findOne({
         where: {
-          id: request.params.centerId
+          id: parseInt(request.params.centerId)
         }
       })
       .then((returnedCenter) => {
         if (!returnedCenter) {
+          console.log('====================>', 'get 1 error');
           return response.status(404).send({
             Status: 'Get Event Failed',
             message: `Event with ${request.params.eventId} was not found!`
