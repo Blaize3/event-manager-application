@@ -13,7 +13,7 @@
     "test:dev:ed": "npm run setup:db && npm run setup:db2 && npm run test:dev",
     "setup:db": "./node_modules/.bin/cross-env NODE_ENV=test sequelize db:migrate:undo:all",
     "setup:db2": "./node_modules/.bin/cross-env NODE_ENV=test sequelize db:migrate",
-    "test:dev": "./node_modules/.bin/cross-env NODE_ENV=test nyc mocha --require babel-polyfill --compilers js:babel-register ./server/test/test.js --exit",
+    "test:dev": "./node_modules/.bin/cross-env NODE_ENV=test nyc moc ha --require babel-polyfill --compilers js:babel-register ./server/test/test.js --exit",
     "coverage:dev": "nyc report --reporter=lcov --reporter=text --reporter=lcovonly mocha --compilers js:babel-register ./server/test/test.js",
     "coverage:wait": "nyc --all npm test && nyc report --reporter=html --reporter=text-summary",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
