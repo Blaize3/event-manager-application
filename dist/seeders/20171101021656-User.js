@@ -1,0 +1,33 @@
+'use strict';
+
+module.exports = {
+  up: function up(queryInterface, Sequelize) {
+    return queryInterface.bulkInsert('Users', [{
+      id: 1,
+      email: 'akugbeode@yahoo.com',
+      firstname: 'Akugbe',
+      lastname: 'Ode',
+      username: 'blaize3',
+      password: 'oghogho@1',
+      isAdmin: true,
+      role: 'super user',
+      updatedAt: '2017-11-21 01:21:40.219+00',
+      createdAt: '2017-11-21 01:21:40.219+00'
+    }, {
+      id: 2,
+      email: 'egbeode@gmail.com',
+      firstname: 'Precious',
+      lastname: 'Ode',
+      username: 'preshode',
+      password: 'precious@20',
+      isAdmin: false,
+      role: 'super user',
+      updatedAt: '2017-11-21 01:21:40.219+00',
+      createdAt: '2017-11-21 01:21:40.219+00'
+    }], {});
+  },
+
+  down: function down(queryInterface, Sequelize) {
+    return queryInterface.bulkDelete('Users', null, {});
+  }
+};
