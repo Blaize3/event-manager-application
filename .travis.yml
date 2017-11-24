@@ -9,7 +9,7 @@ services:
 before_script:
   - psql -c 'create database event_manager_test_db;' -U postgres 
 script:
-   - npm run test
+   - npm run test:dev
 
 after_success:
   - npm run coverage

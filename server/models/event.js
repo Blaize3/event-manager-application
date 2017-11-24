@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'Event title must be letters only'
         },
         notEmpty: {
@@ -51,7 +51,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'Event organizer must be letters only'
         },
         notEmpty: {
@@ -111,7 +111,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'Event privacy must be letters only'
         },
         notEmpty: {
@@ -129,7 +129,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'Event description must be letters only'
         },
         notEmpty: {

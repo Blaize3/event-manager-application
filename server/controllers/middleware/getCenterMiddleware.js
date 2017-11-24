@@ -17,7 +17,8 @@ class GetCenter {
    * @memberof GetCenter
    */
   static getOneEvent(request, response, next) {
-    const validateEventId = CenterValidator.validateId(request.params.eventId);
+    console.log('=============================>', request.params.centerId);
+    const validateEventId = CenterValidator.validateIdparseInt((request.params.eventId, 10));
     if (validateEventId.isNotValid) {
       console.log(validateEventId.isNotValid);
       return response.status(400).send({
@@ -38,11 +39,13 @@ class GetCenter {
             message: `Event with ${request.params.eventId} was not found!`
           });
         }
+        console.log('====================>', 'get 1 completed');
         request.centerObject = returnedCenter;
         next();
       })
       .catch((error) => {
-        next(error.errors[0].message);
+        // next(error.errors[0].message);
+        response.status(404);
       });
   }
 }

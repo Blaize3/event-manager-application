@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'Center name must be letters only'
         },
         notEmpty: {
@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'Center address must be letters only'
         },
         notEmpty: {
@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'Center location must be letters only'
         },
         notEmpty: {
@@ -60,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'Center type must be letters only'
         },
         notEmpty: {
@@ -120,7 +120,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'Center added by must be letters only'
         },
         notEmpty: {
@@ -138,7 +138,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'Center description must be letters only'
         },
         notEmpty: {

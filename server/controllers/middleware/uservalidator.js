@@ -96,7 +96,8 @@ class UserInputValidators {
     }
 
     // Validate User isAdmin field
-    if (typeof (JSON.parse(userObject.isAdmin)) !== typeof (true)) {
+    userObject.isAdmin = Boolean(userObject.isAdmin);
+    if (typeof (userObject.isAdmin) !== typeof (true)) {
       hasFailed = true;
       errorCount += 1;
       errorMessage += `${errorCount}. isAdmin field must be a boolean, `;

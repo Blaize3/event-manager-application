@@ -23,13 +23,21 @@ class HandleCenterRequest {
       address: request.body.address,
       location: request.body.location,
       center_type: request.body.center_type,
-      isAvailable: Boolean(request.body.isAvailable),
+      isAvailable: request.body.isAvailable,
       capacity: parseInt(request.body.capacity, 10),
       usage_fee: parseFloat(request.body.usage_fee),
       added_by: request.body.added_by,
       description: request.body.description
     };
-
+   
+    try {
+      if (typeof JSON.parse(centerObject.isAvailable) !== 'boolean') {
+        centerObject.isAvailable = false;
+      }
+    } catch (error) {
+      centerObject.isAvailable = false;
+    }
+    
     const validateEventCreateObject = CenterInputValidators.addCenterValidators(centerObject);
     if (validateEventCreateObject.isNotValid) {
       console.log(validateEventCreateObject.isNotValid);
@@ -50,7 +58,7 @@ class HandleCenterRequest {
           if (request.decoded.isAdmin) {
             return Center
               .create(centerObject)
-              .then(createdCenter => response.status(200).send({
+              .then(createdCenter => response.status(201).send({
                 Status: 'Center Creaation Successful',
                 'Created Center': createdCenter
               }))

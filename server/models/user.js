@@ -12,10 +12,6 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: {
           args: true,
           msg: 'email cannot be empty'
-        },
-        isLowercase: {
-          args: true,
-          msg: 'email must be all lower case'
         }
       }
     },
@@ -24,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'firstname must be letters only'
         },
         notEmpty: {
@@ -42,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         is: {
-          args: /^[a-z]+$/i,
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'lastname must be letters only'
         },
         notEmpty: {
@@ -57,10 +53,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     username: {
       allowNull: false,
+      unique: true,
       type: DataTypes.STRING,
       validate: {
-        isAlphanumeric: {
-          args: true,
+        is: {
+          args: /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
           msg: 'username must be alphanumeric e.g. blaize3'
         },
         notEmpty: {
@@ -86,6 +83,7 @@ module.exports = (sequelize, DataTypes) => {
     isAdmin: {
       allowNull: false,
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
       validate: {
         is: {
           args: /^(true|false)$/,
