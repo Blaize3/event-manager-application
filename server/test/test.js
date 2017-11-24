@@ -184,28 +184,6 @@ describe('Events Manager', () => {
       });
   });
 
-  it('Create Event', (done) => {
-    const centerObject = {
-      userId: 1,
-      centerId: 1,
-      title: 'wedding',
-      organizer: 'eskimo event',
-      start_date: '2017-12-11',
-      event_time: '03:45:23 am',
-      end_date: '2017-12-11',
-      privacy: 'public',
-      description: 'this is description'
-    };
-    request(app)
-      .put('/api/v1/events')
-      .set('x-access-token', ordinaryUserToken)
-      .send(centerObject)
-      .end((err, res) => {
-        console.log('====================>', res.body);
-        expect(res.status).to.equal(401);
-        done();
-      });
-  });
 });
 
 export default app;

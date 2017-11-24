@@ -17,11 +17,14 @@ module.exports = {
     port: 5432,
     dialect: 'postgres'
   },
-  production: {
+  test1: {
     dailect: 'postges',
     host: process.env.DATABASE_HOST_PROD,
     database: process.env.DATABASE_DATABASE_PROD,
     user: process.env.DATABASE_USER_PROD,
     password: process.env.DATABASE_PASSWORD_PROD
+  },
+  production: {
+    use_env_variable: 'DATABASE_URL'
   }
 };

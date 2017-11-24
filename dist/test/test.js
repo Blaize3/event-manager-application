@@ -155,25 +155,6 @@ describe('Events Manager', function () {
       done();
     });
   });
-
-  it('Create Event', function (done) {
-    var centerObject = {
-      userId: 1,
-      centerId: 1,
-      title: 'wedding',
-      organizer: 'eskimo event',
-      start_date: '2017-12-11',
-      event_time: '03:45:23 am',
-      end_date: '2017-12-11',
-      privacy: 'public',
-      description: 'this is description'
-    };
-    (0, _supertest2.default)(_app2.default).put('/api/v1/events').set('x-access-token', ordinaryUserToken).send(centerObject).end(function (err, res) {
-      console.log('====================>', res.body);
-      (0, _chai.expect)(res.status).to.equal(401);
-      done();
-    });
-  });
 });
 
 exports.default = _app2.default;
