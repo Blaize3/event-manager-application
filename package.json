@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "nodemon --exec ./node_modules/.bin/babel-node ./server/app",
     "build": "babel server -d dist",
-    "start": "babel-node -- ./server/app",
+    "start": "node -- ./dist/app",
     "heroku-postbuild": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "test:uuid": "npm run reset:db && npm run migrate:test && npm run seed:test && nyc mocha ./server/test/test.js --compilers js:babel-core/register  --exit",
     "test": "dropdb --if-exists event_manager_test_db && createdb event_manager_test_db && npm run migrate:test && npm run seed:test && nyc mocha ./server/test/test.js --compilers js:babel-core/register --timeout 30000  --exit",
