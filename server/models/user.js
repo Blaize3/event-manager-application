@@ -94,6 +94,19 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'User type is required'
         }
       }
+    },
+    role: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      validate: {
+        is: {
+          args:  /^[a-zA-Z0-9-,]+(\s{0,1}[a-zA-Z0-9-, ])*$/,
+          msg: 'User type must be boolaen'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'User type is required'
+        }
     }
   });
   //   User.associate = (models) => {

@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import { User } from '../models';
-import securePassword from './middleware/bcrypt';
+// import securePassword from './middleware/bcrypt';
 import Token from './middleware/token';
 import UserInputValidators from './middleware/uservalidator';
 /**
@@ -26,7 +26,8 @@ class HandleUserRequests {
       firstname: request.body.firstname,
       lastname: request.body.lastname,
       username: request.body.username,
-      isAdmin: request.body.isAdmin
+      isAdmin: request.body.isAdmin,
+      role: request.body.role
     };
 
     try {
@@ -61,17 +62,26 @@ class HandleUserRequests {
         if (!isExisted) {
           return User
             .create(userObject)
-            .then(createdUser => response.status(201).send({
-              Status: 'Account Creaation Successful',
-              'Created Account': {
-                id: createdUser.id,
-                email: createdUser.email,
-                username: createdUser.username,
-                firstname: createdUser.firstname,
-                lastname: createdUser.lastname,
-                isAdmin: createdUser.isAdmin
-              }
-            }))
+            .then((createdUser) => {
+              const payLoad = {
+                userID: createdUser.id, email: createdUser.email, firstname: createdUser.firstname, lastname: createdUser.lastname, isAdmin: createdUser.isAdmin, role: createdUser.role
+              };
+              const token = Token.generateToken(payLoad);
+
+              response.status(201).send({
+                Status: 'Account Creaation Successful',
+                'Created Account': {
+                  id: createdUser.id,
+                  email: createdUser.email,
+                  username: createdUser.username,
+                  firstname: createdUser.firstname,
+                  lastname: createdUser.lastname,
+                  isAdmin: createdUser.isAdmin,
+                  role: createdUser.role
+                },
+                token
+              });
+            })
             .catch((error) => {
               next(error.errors[0].message);
             });
@@ -118,7 +128,7 @@ class HandleUserRequests {
         // const isAuthenticationSuccessful = securePassword.decryptPassword(request.body.password, hash);
         if (hashedPassword) {
           const payLoad = {
-            userID: loggedInUser.id, email: loggedInUser.email, firstname: loggedInUser.firstname, lastname: loggedInUser.lastname, isAdmin: loggedInUser.isAdmin
+            userID: loggedInUser.id, email: loggedInUser.email, firstname: loggedInUser.firstname, lastname: loggedInUser.lastname, isAdmin: loggedInUser.isAdmin, role: loggedInUser.role
           };
           const token = Token.generateToken(payLoad);
           return response.status(200).send({
@@ -153,20 +163,12 @@ class HandleUserRequests {
  * @returns {HandleUserRequest} The identifier for ...
  * @memberof HandleUserRequests
  */
-  static password(request, response, next) {
+  static makeAdmin(request, response, next) {
     const userObject = {
       email: request.body.email,
-      newPassword: request.body.newPassword
+      isAdmin: true,
+      role: 'Admin'
     };
-
-    const validateAccountCreateObject = UserInputValidators.resetPasswordValidators(userObject);
-    if (validateAccountCreateObject.isNotValid) {
-      console.log(validateAccountCreateObject.isNotValid);
-      return response.status(400).send({
-        message: `${validateAccountCreateObject.errorCount} input fields data are not properly set`,
-        data: validateAccountCreateObject.errorMessage
-      });
-    }
     return User
       .findOne({
         where: {
@@ -176,44 +178,48 @@ class HandleUserRequests {
       .then((user) => {
         if (!user) {
           return response.status(404).send({
-            Status: 'Password Reset failed',
-            message: 'User account does not exist'
+            Status: 'Failed to get user',
+            message: ' User not Found'
           });
         }
+        // 000000000000000000000000000000
+        if (request.decoded.isAdmin && request.decoded.role === 'super user') {
+          const updateObj = {
+            ...user,
+            ...userObject
+          };
 
-        userObject.newPassword = securePassword.encryptPassword(userObject.newPassword);
-
-        const updateObject = {
-          id: user.id,
-          email: user.email,
-          password: userObject.newPassword,
-          firstname: user.firstname,
-          lastname: user.lastname,
-          sex: user.sex
-        };
-
-        return User
-          .update(updateObject, {
-            where: {
-              id: user.id
-            },
-            returning: true,
-            plain: true
-          })
-          .then(updatedUser => response.status(200).send({
-            Status: 'Password Reset Successful',
-            'Account Details': {
-              id: updatedUser[1].dataValues.id,
-              email: updatedUser[1].dataValues.email,
-              username: updatedUser[1].dataValues.username,
-              firstname: updatedUser[1].dataValues.firstname,
-              lastname: updatedUser[1].dataValues.lastname,
-              isAdmin: updatedUser[1].dataValues.isAdmin
-            }
-          }))
-          .catch((error) => {
-            next(error.errors[0].message);
+          return User
+            .update(updateObj, {
+              where: {
+                id: updateObj.id
+              },
+              returning: true,
+              plain: true
+            })
+            .then(upgradedUser => response.status(200).send({
+              Status: `User ${upgradedUser.id} has been made an Admin`,
+              'User Details': {
+                id: upgradedUser.id,
+                email: upgradedUser.email,
+                username: upgradedUser.username,
+                firstname: upgradedUser.firstname,
+                lastname: upgradedUser.lastname,
+                isAdmin: upgradedUser.isAdmin,
+                role: upgradedUser.role
+              }
+            }))
+            .catch((error) => {
+              next(error.errors[0].message);
+            });
+        }
+        if (!request.decoded.isAdmin) {
+          return response.status(401).send({
+            Status: 'Upgrade User Failed',
+            message: `User ${request.decoded.userID} is not authorized to create privileged Users`
           });
+        }
+        // 0000000000000000000000000000000
       })
       .catch((error) => {
         next(error.errors[0].message);
