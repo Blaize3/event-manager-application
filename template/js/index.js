@@ -3,11 +3,11 @@ const signIn = document.querySelector('#sign-in');
 // const adminLogout = document.querySelector('#admin');
 // const userLogout = document.querySelector('#user');
 
-function isChecked(e){
-  if (document.querySelector("#sign-in-check").checked){
+function isChecked(e) {
+  if (document.querySelector('#sign-in-check').checked) {
     e.preventDefault();
     window.location = 'admin.html';
-  }else{
+  } else {
     e.preventDefault();
     window.location = 'authenticated.html';
   }

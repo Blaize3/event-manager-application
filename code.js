@@ -1,3 +1,3 @@
 export default {
-    secret: 'thesecretbehindakugbeodesprojectonmorerecipeandelacycle28bootcamp'
+  secret: 'thesecretbehindakugbeodesprojectonmorerecipeandelacycle28bootcamp'
 };

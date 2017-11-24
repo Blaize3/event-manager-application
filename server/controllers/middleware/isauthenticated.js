@@ -18,7 +18,7 @@ class checkUserAuthentication {
  */
   static isAuthenticated(request, response, next) {
     const token = request.body.token || request.query.token || request.headers['x-access-token'];
-    
+
     const decoded = Token.decodeToken(token);
 
     if (decoded === 'no token') {

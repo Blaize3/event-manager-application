@@ -6,6 +6,10 @@ install:
    - npm install
 services:
   - postgresql
+env:
+  global:
+    - CC_TEST_REPORTER_ID=c4238d847e556c1d4d8d3d71f8cbf82e120bbdbe64fcca8b79ba9e87d3b78f5a
+
 before_script:
   - psql -c 'create database event_manager_test_db;' -U postgres 
 script:

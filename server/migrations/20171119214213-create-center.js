@@ -22,7 +22,7 @@ module.exports = {
       allowNull: false,
       type: Sequelize.STRING
     },
-    isAvailable:{
+    isAvailable: {
       allowNull: false,
       type: Sequelize.BOOLEAN
     },

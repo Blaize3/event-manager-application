@@ -29,7 +29,7 @@ class HandleCenterRequest {
       added_by: request.body.added_by,
       description: request.body.description
     };
-   
+
     try {
       if (typeof JSON.parse(centerObject.isAvailable) !== 'boolean') {
         centerObject.isAvailable = false;
@@ -37,7 +37,7 @@ class HandleCenterRequest {
     } catch (error) {
       centerObject.isAvailable = false;
     }
-    
+
     const validateEventCreateObject = CenterInputValidators.addCenterValidators(centerObject);
     if (validateEventCreateObject.isNotValid) {
       console.log(validateEventCreateObject.isNotValid);

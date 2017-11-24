@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/Blaize3/event-manager-application.svg?branch=develop)](https://travis-ci.org/Blaize3/event-manager-application)
-[![Coverage Status](https://coveralls.io/repos/github/Blaize3/event-manager-application/badge.svg)](https://coveralls.io/github/Blaize3/event-manager-application)
-[![Maintainability](https://api.codeclimate.com/v1/badges/7385ced34a65057a9a73/maintainability)](https://codeclimate.com/github/Blaize3/event-manager-application/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/7385ced34a65057a9a73/test_coverage)](https://codeclimate.com/github/Blaize3/event-manager-application/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8ca65293f9195a557979/maintainability)](https://codeclimate.com/github/Blaize3/event-manager-application/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/8ca65293f9195a557979/test_coverage)](https://codeclimate.com/github/Blaize3/event-manager-application/test_coverage)
+[![Coverage Status](https://coveralls.io/repos/github/Blaize3/event-manager-application/badge.svg?branch=develop)](https://coveralls.io/github/Blaize3/event-manager-application?branch=develop)
 
 # event-manager-application
 An application that allow users to book events and manage the event that they create.

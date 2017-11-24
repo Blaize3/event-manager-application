@@ -13,7 +13,7 @@ export default (app) => {
   app.post('/api/v1/users/login', HandleUserRequests.signin);
 
   app.post('/api/v1/events', checkUserAuthentication.isAuthenticated, HandleEventRequest.createEvent);
-  
+
   app.put('/api/v1/events/:eventId', checkUserAuthentication.isAuthenticated, GetEvent.getOneEvent, HandleEventRequest.editEvent);
 
   app.delete('/api/v1/events/:eventId', checkUserAuthentication.isAuthenticated, GetEvent.getOneEvent, HandleEventRequest.deleteEvent);

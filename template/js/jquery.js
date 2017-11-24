@@ -1,5 +1,5 @@
-$(document).ready(function() {
-  $('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })
+$(document).ready(() => {
+  $('#myModal').on('shown.bs.modal', () => {
+    $('#myInput').trigger('focus');
+  });
 });
