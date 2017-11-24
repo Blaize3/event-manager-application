@@ -17,7 +17,7 @@ class GetEvent {
    * @memberof GetEvent
    */
   static getOneEvent(request, response, next) {
-    const validateEventId = EventValidator.validateId(parseInt(request.params.eventId));
+    const validateEventId = EventValidator.validateId(parseInt(request.params.eventId, 10));
     if (validateEventId.isNotValid) {
       console.log(validateEventId.isNotValid);
       return response.status(400).send({

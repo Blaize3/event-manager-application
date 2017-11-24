@@ -1,3 +1,4 @@
+import bcrypt from 'bcrypt';
 import { User } from '../models';
 import securePassword from './middleware/bcrypt';
 import Token from './middleware/token';
@@ -8,7 +9,6 @@ import UserInputValidators from './middleware/uservalidator';
  * @class HandleUserRequests
  */
 class HandleUserRequests {
- 
   /**
      *
      *
@@ -22,12 +22,21 @@ class HandleUserRequests {
   static signup(request, response, next) {
     const userObject = {
       email: request.body.email,
-      password: request.body.password,
+      password: bcrypt.hashSync(request.body.password, 10),
       firstname: request.body.firstname,
       lastname: request.body.lastname,
       username: request.body.username,
-      isAdmin: JSON.parse(request.body.isAdmin)
+      isAdmin: request.body.isAdmin
     };
+
+    try {
+      if (typeof JSON.parse(userObject.isAdmin) !== 'boolean') {
+        userObject.isAdmin = false;
+      }
+    } catch (error) {
+      userObject.isAdmin = false;
+    }
+
     const validateAccountCreateObject = UserInputValidators.signupValidators(userObject);
     if (validateAccountCreateObject.isNotValid) {
       return response.status(400).send({
@@ -35,10 +44,10 @@ class HandleUserRequests {
         data: validateAccountCreateObject.errorMessage
       });
     }
-    console.log(validateAccountCreateObject.isNotValid);
-    User.beforeCreate((userObject) => {
-      userObject.password = securePassword.encryptPassword(userObject.password);
-    });
+    // console.log(validateAccountCreateObject.isNotValid);
+    // User.beforeCreate((userObject) => {
+    //   userObject.password = securePassword.encryptPassword(userObject.password);
+    // });
     User
       .findOne({
         where: {
@@ -52,9 +61,10 @@ class HandleUserRequests {
         if (!isExisted) {
           return User
             .create(userObject)
-            .then(createdUser => response.status(200).send({
+            .then(createdUser => response.status(201).send({
               Status: 'Account Creaation Successful',
               'Created Account': {
+                id: createdUser.id,
                 email: createdUser.email,
                 username: createdUser.username,
                 firstname: createdUser.firstname,
@@ -68,16 +78,16 @@ class HandleUserRequests {
         }
         if (isExisted) {
           if (isExisted.email === request.body.email && isExisted.username === request.body.username) {
-            return response.status(400).send({ error: 'email and username already exist' });
+            return response.status(403).send({ error: 'email and username already exist' });
           } else if (isExisted.email === request.body.email) {
-            return response.status(400).send({ error: 'email already exist' });
+            return response.status(403).send({ error: 'email already exist' });
           } else if (isExisted.username === request.body.username) {
-            return response.status(400).send({ error: 'username already exist' });
+            return response.status(403).send({ error: 'username already exist' });
           }
         }
       })
       .catch((error) => {
-        next(new Error('Sequelize error'));
+        next(error.errors[0].message);
       });
   }
   /**
@@ -104,9 +114,9 @@ class HandleUserRequests {
             message: 'invalid email'
           });
         }
-        const hash = loggedInUser.password;
-        const isAuthenticationSuccessful = securePassword.decryptPassword(request.body.password, hash);
-        if (isAuthenticationSuccessful) {
+        const hashedPassword = bcrypt.compareSync(request.body.password, loggedInUser.password);
+        // const isAuthenticationSuccessful = securePassword.decryptPassword(request.body.password, hash);
+        if (hashedPassword) {
           const payLoad = {
             userID: loggedInUser.id, email: loggedInUser.email, firstname: loggedInUser.firstname, lastname: loggedInUser.lastname, isAdmin: loggedInUser.isAdmin
           };

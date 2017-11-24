@@ -14,9 +14,7 @@ class securePassword {
  * @memberof securePassword
  */
   static encryptPassword(password) {
-    const saltRounds = 10;
-    const salt = bcrypt.genSaltSync(saltRounds);
-    const hash = bcrypt.hashSync(password, salt);
+    const hash = bcrypt.hashSync(password, 10);
     return hash;
   }
   /**

@@ -7,15 +7,17 @@
     "start:dev": "nodemon --exec ./node_modules/.bin/babel-node ./server/app",
     "build": "webpack",
     "start": "webpack-dev-server",
-    "test": "npm run reset:db && npm run migrate:test && npm run seed:test && nyc mocha ./server/test/test.js --compilers js:babel-core/register  --exit",
+    "test:uuid": "npm run reset:db && npm run migrate:test && npm run seed:test && nyc mocha ./server/test/test.js --compilers js:babel-core/register  --exit",
+    "test": "dropdb --if-exists event_manager_test_db && createdb event_manager_test_db && npm run migrate:test && npm run seed:test && nyc mocha ./server/test/test.js --compilers js:babel-core/register --timeout 30000  --exit",
+    "test:dev": "set NODE_ENV=test&&sequelize db:migrate:undo:all&&sequelize db:migrate && cross-env NODE_ENV=test nyc mocha --require babel-polyfill --compilers js:babel-register ./server/test/test.js --exit",
     "coverage:dev": "nyc report --reporter=lcov --reporter=text --reporter=lcovonly mocha --compilers js:babel-register ./server/test/test.js",
     "coverage:wait": "nyc --all npm test && nyc report --reporter=html --reporter=text-summary",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "seed:test": "./node_modules/.bin/cross-env NODE_ENV=test sequelize db:seed:all",
     "migrate": "./node_modules/.bin/sequelize db:migrate",
-    "migrate:test": "./node_modules/.bin/cross-env NODE_ENV=test sequelize db:migrate",
-    "reset:db": "./node_modules/.bin/cross-env NODE_ENV=test sequelize db:migrate:undo:all"
+    "migrate:test": "./node_modules/.bin/cross-env NODE_ENV=development sequelize db:migrate",
+    "reset:db": "./node_modules/.bin/cross-env NODE_ENV=development sequelize db:migrate:undo:all && npm run migrate:test"
   },
   "repository": {
     "type": "git",
@@ -44,7 +46,8 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.22.8",
     "sequelize-cli": "^3.1.0",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "chai-http": "^3.0.0"
   },
   "devDependencies": {
     "babel-plugin-transform-es2015-spread": "^6.22.0",

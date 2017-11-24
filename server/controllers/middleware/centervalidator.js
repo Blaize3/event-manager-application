@@ -95,6 +95,7 @@ class CenterInputValidators {
     }
 
     // Validate Center isAvailable field
+    centerObject.isAvailable = Boolean(centerObject.isAvailable);
     if (typeof (centerObject.isAvailable) !== typeof (true)) {
       hasFailed = true;
       errorCount += 1;

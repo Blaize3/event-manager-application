@@ -17,7 +17,7 @@ class checkUserAuthentication {
  * @memberof checkUserAuthentication
  */
   static isAuthenticated(request, response, next) {
-    const token = request.headers['x-access-token'];
+    const token = request.body.token || request.query.token || request.headers['x-access-token'];
     
     const decoded = Token.decodeToken(token);
 
@@ -29,10 +29,11 @@ class checkUserAuthentication {
     return User
       .findOne({
         where: {
-          id: parseInt(decoded.userID)
+          id: parseInt(decoded.userID, 10)
         }
       })
-      .then((user) => {
+      .then(() => {
+        console.log('====================>', 'auth completed');
         request.decoded = decoded;
         next();
       })
