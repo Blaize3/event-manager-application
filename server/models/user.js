@@ -107,6 +107,7 @@ module.exports = (sequelize, DataTypes) => {
           args: true,
           msg: 'User type is required'
         }
+      }
     }
   });
   //   User.associate = (models) => {
